@@ -5,15 +5,125 @@ This report summarizes the key concepts and common error-prone areas from Weeks 
 
 ## Week 1: Introduction to AI Programming
 ### Key Concepts
-- **Number System Conversions**: Conversions between decimal, binary, octal, and hexadecimal. Positional notation: N = a_n × base^n + a_{n-1} × base^{n-1} + ... + a_0 × base^0 + a_{-1} × base^{-1} + ... Note: When converting decimal fractions to binary, multiply the fractional part by 2, take the integer part as the next digit, from higher to lower position.
+- **Number Systems**:
+  - **Decimal**: Base 10, symbols {0,1,2,3,4,5,6,7,8,9}
+  - **Binary**: Base 2, symbols {0,1}, "carry when hit 2"
+  - **Octal**: Base 8, symbols {0,1,2,3,4,5,6,7}, "carry when hit 8"
+  - **Hexadecimal**: Base 16, symbols {0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f}, "carry when hit 16"
+- **Positional Notation**: N = a_n × base^n + a_{n-1} × base^{n-1} + ... + a_0 × base^0 + a_{-1} × base^{-1} + ...
+  - a_n is the positional value, base^n is the weight
+
+- **Number System Conversion Methods**:
+
+  **1. Other Bases → Decimal**
+  - Method: Expand using positional notation, multiply each digit by its weight, then sum
+  - Example: Binary to decimal
+    ```
+    (10110.11)₂ = 1×2⁴ + 0×2³ + 1×2² + 1×2¹ + 0×2⁰ + 1×2⁻¹ + 1×2⁻²
+                = 16 + 0 + 4 + 2 + 0 + 0.5 + 0.25
+                = (22.75)₁₀
+    ```
+  - Octal to decimal: Same method, base is 8
+    ```
+    (35.7)₈ = 3×8¹ + 5×8⁰ + 7×8⁻¹ = 24 + 5 + 0.875 = (29.875)₁₀
+    ```
+  - Hexadecimal to decimal: Same method, base is 16
+    ```
+    (A7D.E)₁₆ = 10×16² + 7×16¹ + 13×16⁰ + 14×16⁻¹ = 2560 + 112 + 13 + 0.875 = (2685.875)₁₀
+    ```
+
+  **2. Decimal → Binary**
+  - **Integer part**: Divide by 2, take remainder, from lower to higher position (last remainder is highest bit)
+    ```
+    Example: (57)₁₀ = (?)₂
+    57 ÷ 2 = 28 ... remainder 1  ← lowest bit
+    28 ÷ 2 = 14 ... remainder 0
+    14 ÷ 2 = 7  ... remainder 0
+    7  ÷ 2 = 3  ... remainder 1
+    3  ÷ 2 = 1  ... remainder 1
+    1  ÷ 2 = 0  ... remainder 1  ← highest bit
+    Answer: (57)₁₀ = (111001)₂
+    ```
+  - **Fractional part**: Multiply by 2, take integer part, from higher to lower position (first integer part is highest bit)
+    ```
+    Example: (0.875)₁₀ = (?)₂
+    0.875 × 2 = 1.75, integer part 1 ← highest bit
+    0.75  × 2 = 1.5,  integer part 1
+    0.5   × 2 = 1.0,  integer part 1 ← lowest bit
+    Answer: (0.875)₁₀ = (0.111)₂
+    ```
+  - **Integer + fractional**: Convert integer and fractional parts separately, then combine
+    ```
+    Example: (215.6875)₁₀ = (?)₂
+    Integer part: 215 = (11010111)₂
+    Fractional part: 0.6875 = (0.1011)₂
+    Answer: (215.6875)₁₀ = (11010111.1011)₂
+    ```
+
+  **3. Binary ↔ Octal**
+  - **Binary → Octal**:
+    - Integer part: Starting from lower (right) position, group every 3 binary digits, convert to 1 octal digit (pad with 0 at higher positions if needed)
+    - Fractional part: Starting from higher (left) position, group every 3 binary digits, convert to 1 octal digit (pad with 0 at lower positions if needed)
+    - Correspondence: 3 binary digits ↔ 1 octal digit
+      ```
+      (000)₂ = (0)₈    (001)₂ = (1)₈    (010)₂ = (2)₈    (011)₂ = (3)₈
+      (100)₂ = (4)₈    (101)₂ = (5)₈    (110)₂ = (6)₈    (111)₂ = (7)₈
+      ```
+    - Example:
+      ```
+      (11010111.1011)₂ = (?)₈
+      Integer part: 011 010 111 → 3 2 7
+      Fractional part: 101 100 (pad 0) → 5 4
+      Answer: (11010111.1011)₂ = (327.54)₈
+      ```
+  - **Octal → Binary**:
+    - Convert each octal digit to 3 binary digits, keep order unchanged
+    - Example:
+      ```
+      (327.54)₈ = (?)₂
+      3 → 011,  2 → 010,  7 → 111
+      5 → 101,  4 → 100
+      Answer: (327.54)₈ = (011010111.101100)₂ = (11010111.1011)₂
+      ```
+
+  **4. Binary ↔ Hexadecimal**
+  - **Binary → Hexadecimal**:
+    - Integer part: Starting from lower (right) position, group every 4 binary digits, convert to 1 hexadecimal digit (pad with 0 at higher positions if needed)
+    - Fractional part: Starting from higher (left) position, group every 4 binary digits, convert to 1 hexadecimal digit (pad with 0 at lower positions if needed)
+    - Correspondence: 4 binary digits ↔ 1 hexadecimal digit (0-9 correspond to digits, 10-15 correspond to a-f)
+    - Example:
+      ```
+      (11010111.1011)₂ = (?)₁₆
+      Integer part: 1101 0111 → D 7
+      Fractional part: 1011 0000 (pad 0) → B 0
+      Answer: (11010111.1011)₂ = (D7.B)₁₆
+      ```
+  - **Hexadecimal → Binary**:
+    - Convert each hexadecimal digit to 4 binary digits, keep order unchanged
+    - Example:
+      ```
+      (D7.B)₁₆ = (?)₂
+      D → 1101,  7 → 0111
+      B → 1011
+      Answer: (D7.B)₁₆ = (11010111.1011)₂
+      ```
+
+  **5. Decimal → Octal/Hexadecimal**
+  - Method: First convert to binary, then convert to octal or hexadecimal
+  - Or: Directly use division/multiplication with corresponding base (similar to decimal to binary)
+
 - **Unit Conversion**: 1 KB = 1024 B (2^10), 1 MB = 1024 KB, 1 GB = 1024 MB.
 - **Computer Fundamentals**: Von Neumann architecture, CPU (control unit and arithmetic/logic unit), memory (RAM/ROM), input/output devices.
 - **Variables**: A variable is a named space in memory where values can be stored and retrieved. Integer variables are immutable.
 
 ### Common Pitfalls
-- Forgetting the direction when converting fractional parts: decimal to binary fractions go from higher to lower position; integer parts go from lower to higher position.
-- Forgetting to handle integer and fractional parts separately: if a number has both parts, convert them separately and combine.
-- Forgetting to pad zeros when converting between binary and octal/hexadecimal: octal groups 3 binary digits, hexadecimal groups 4 binary digits.
+- **Wrong direction for fractional part conversion**: Decimal to binary fraction goes from higher to lower position (first integer part is highest bit); integer part goes from lower to higher position (first remainder is lowest bit).
+- **Forgetting to handle integer and fractional parts separately**: If a number has both parts, must convert separately then combine.
+- **Forgetting to pad zeros when converting between binary and octal/hexadecimal**:
+  - Octal: Group every 3 binary digits, pad with 0 if needed
+  - Hexadecimal: Group every 4 binary digits, pad with 0 if needed
+  - Integer part groups from lower position, fractional part groups from higher position
+- **Wrong weights in positional notation expansion**: Note integer part weights start from 2⁰ (or 8⁰, 16⁰), fractional part weights start from 2⁻¹ (or 8⁻¹, 16⁻¹).
 
 ## Week 2: Python Basics
 ### Key Concepts
@@ -21,16 +131,27 @@ This report summarizes the key concepts and common error-prone areas from Weeks 
 - **Variable Naming Rules**: Must start with a letter or underscore; can only contain letters, numbers, and underscores; case-sensitive; cannot use reserved words (e.g., def, if, while).
 - **Data Types**: Integer (int), float (float), string (str). Use type() to check types.
 - **Type Conversion**: int(), float(), str(). When an expression contains both integer and float, integers are implicitly converted to float.
-- **Operators**: Arithmetic operators (+, -, *, /, //, %, **). // is floor division (e.g., -7//2 = -4). ** is exponentiation, right-associative. Operator precedence: parentheses > exponentiation > multiplication/division/remainder > addition/subtraction.
+- **Operators**: Arithmetic operators (+, -, *, /, //, %, **). // is floor division (e.g., -7//2 = -4). ** is exponentiation, right-associative (e.g., 2**3**2 = 2**(3**2) = 512). Operator precedence: parentheses > exponentiation > multiplication/division/remainder > addition/subtraction.
+- **+ Operator Specific Usage**:
+  - Strings: `'hello' + 'world'` = `'helloworld'` (concatenation)
+  - Lists: `[1, 2] + [3, 4]` = `[1, 2, 3, 4]` (creates new list)
+  - Numbers: `3 + 5` = `8` (arithmetic addition)
+  - Note: Cannot add string and number (e.g., `'2' + 3` raises error), need type conversion first
 - **Assignment**: = is for assignment; == is for comparison. Cascaded assignment: x = y = z = 0. Simultaneous assignment: x, y = y, x (swaps two variables).
-- **Input/Output**: input() returns a string; print() for output; eval() can execute a string as a Python expression.
+- **Input/Output**: input() returns a string; print() for output.
+- **eval() Function**:
+  - `eval()` function takes a string argument and evaluates that string as a Python expression
+  - Just as if the programmer had directly entered the expression as code, returns the result of that expression
+  - Example: `eval('2 + 3')` returns `5`; `eval('3 * 4')` returns `12`
+  - Purpose: Gives programmers flexibility to determine what to execute at run-time
+  - **Security Warning**: Should be cautious about using it, as users could potentially cause problems with "inappropriate" input (e.g., executing dangerous operations like deleting files). If only processing numeric literals, prefer `int()` or `float()` instead of `eval()`
 
 ### Common Pitfalls
 - Forgetting input() returns a string, leading to type errors in arithmetic (e.g., '2' + 3).
 - Operator precedence mistakes (e.g., 1 + 2 * 3 = 7, not 9).
 - Indentation errors in script mode (must use consistent spaces or tabs).
 - Confusing = and == (= is assignment, == is comparison).
-- Security concerns with eval() (executes arbitrary code).
+- Security concerns with eval() (executes arbitrary code, users may input dangerous operations; if only processing numbers, prefer int() or float()).
 
 ## Week 3: Flow Control
 ### Key Concepts
@@ -69,10 +190,36 @@ This report summarizes the key concepts and common error-prone areas from Weeks 
 ## Week 5: Lists, Dictionaries, and Tuples
 ### Key Concepts
 - **Lists**: Mutable sequences with square brackets []. Access elements by index (starts at 0). len() returns length. append() adds element. sort() sorts in-place. Can concatenate with +, repeat with *. Slicing similar to strings (second number is "up to but not including").
+  - List + operator: `[1, 2] + [3, 4]` = `[1, 2, 3, 4]` (creates new list, doesn't modify original)
+  - List * operator: `[1, 2] * 3` = `[1, 2, 1, 2, 1, 2]` (repeats)
 - **range() Function**: Returns number sequence, used in for loops. For example, range(5) produces [0,1,2,3,4]. Note: range() in Python 3 returns a range object, not a list.
-- **Dictionaries**: Use curly braces {}, key-value pairs {key: value}. Unordered collection (but Python 3.7+ preserves insertion order). Access value by key; KeyError if key doesn't exist. Use get() method to get value with default if key missing.
-- **Dictionary Counting**: Common pattern: d[word] = d.get(word, 0) + 1 to count frequencies.
-- **Dictionary Iteration**: Can iterate over keys with for loop; keys(), values(), items() methods. Can use two iteration variables: for k, v in d.items().
+- **Dictionaries**: Use curly braces {}, key-value pairs {key: value}. Unordered collection (but Python 3.7+ preserves insertion order). Access value by key; KeyError if key doesn't exist.
+- **get() Method Specific Usage**:
+  - Syntax: `dict.get(key, default_value)`
+  - If key exists, returns corresponding value; if key doesn't exist, returns default value (no error)
+  - Example: `d = {'a': 1, 'b': 2}`, then `d.get('a', 0)` returns `1`, `d.get('c', 0)` returns `0`
+  - If default not provided, returns None when key missing: `d.get('c')` returns `None`
+- **Dictionary Counting Pattern**:
+  ```python
+  d = {}
+  word = 'hello'
+  d[word] = d.get(word, 0) + 1  # If word not in dict, returns 0 first, then adds 1
+  ```
+- **Dictionary Iteration Three Ways**:
+  1. **Direct iteration**: `for key in d:` or `for key in d.keys():` - iterates over **keys**, not values. Need `d[key]` to get value.
+  2. **Iterate values**: `for value in d.values():` - only iterates values, cannot directly get corresponding key
+  3. **Iterate key-value pairs (recommended)**: `for key, value in d.items():` - uses two iteration variables to get both key and value
+  - Example:
+    ```python
+    d = {'a': 1, 'b': 2}
+    # Way 1: iterate keys
+    for k in d:
+        print(k, d[k])  # Output: a 1, b 2
+    # Way 2: iterate key-value pairs
+    for k, v in d.items():
+        print(k, v)  # Output: a 1, b 2
+    ```
+  - Note: Direct iteration over dictionary (`for key in d`) actually iterates over keys, not values, not key-value pairs
 - **Tuples**: Immutable sequences with parentheses (). Can be dictionary keys (because immutable). items() method returns list of (key, value) tuples.
 - **Tuple Comparison**: Tuples are comparable, lexicographically (compares first element, then next if equal).
 - **Sorting**: list.sort() sorts in-place; sorted() returns new list. Can sort dictionary items().
@@ -80,9 +227,13 @@ This report summarizes the key concepts and common error-prone areas from Weeks 
 ### Common Pitfalls
 - Index out of range (lists/strings start at 0, len() excludes last index).
 - Trying to modify tuple (TypeError: 'tuple' object does not support item assignment).
-- KeyError when accessing non-existent dictionary key (should use get() or check with in first).
+- KeyError when accessing non-existent dictionary key: Using `d['key']` on missing key raises error, should use `d.get('key', default)` or check `'key' in d` first.
+- Misunderstanding dictionary iteration: `for item in d:` iterates over keys, need `d[item]` to get value, or use `for k, v in d.items()` directly.
 - Confusing sort() and sorted() (former mutates list, latter returns new list).
-- Using + instead of append() for list concatenation, causing efficiency issues (e.g., lst = lst + [x] is O(n), while append() is O(1)).
+- Using + instead of append() for list concatenation, causing efficiency issues:
+  - `lst = lst + [x]` creates new list, inefficient (O(n))
+  - `lst.append(x)` modifies original list, efficient (O(1) amortized)
+  - Frequent use of `+` in loops is slow, should use `append()`
 
 ## Week 6: Recursion
 ### Key Concepts
