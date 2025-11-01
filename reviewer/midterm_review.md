@@ -220,13 +220,44 @@ This report summarizes the key concepts and common error-prone areas from Weeks 
         print(k, v)  # Output: a 1, b 2
     ```
   - Note: Direct iteration over dictionary (`for key in d`) actually iterates over keys, not values, not key-value pairs
-- **Tuples**: Immutable sequences with parentheses (). Can be dictionary keys (because immutable). items() method returns list of (key, value) tuples.
+- **Tuples**: Immutable sequences with parentheses ().
+  - **Tuple Initialization**:
+    - Empty tuple: `t = ()` or `t = tuple()`
+    - Single element tuple: `t = (1,)` **Note**: Must have comma, `(1)` is an integer, not a tuple
+    - Multiple elements: `t = (1, 2, 3)` or `t = 1, 2, 3` (parentheses optional but recommended)
+  - **Tuple Basic Operations**:
+    - Index access: `t[0]` accesses first element (index starts at 0)
+    - Slicing: `t[1:3]` gets sub-tuple (note: slicing returns new tuple)
+    - Length: `len(t)` returns number of elements
+    - Iteration: `for item in t:` iterates over each element
+    - Concatenation: `t1 + t2` concatenates two tuples, returns new tuple
+    - Repetition: `t * 3` repeats tuple, returns new tuple
+    - Membership: `1 in t` checks if element is in tuple
+  - **Tuple Characteristics**:
+    - Immutable: Cannot modify after creation, cannot add, delete, or change elements
+    - Can be dictionary keys (because immutable)
+    - `items()` method returns list of (key, value) tuples: `d.items()` returns `[('a', 1), ('b', 2)]`
+    - More efficient than lists (memory and performance), suitable for temporary variables
 - **Tuple Comparison**: Tuples are comparable, lexicographically (compares first element, then next if equal).
-- **Sorting**: list.sort() sorts in-place; sorted() returns new list. Can sort dictionary items().
+  - Comparison rule: Compare elements position by position until finding different elements
+  - Examples:
+    ```python
+    (1, 2, 3) < (2, 1, 1)  # True, because 1 < 2
+    (1, 2, 3) < (1, 3, 1)  # True, because 2 < 3
+    (1, 2) < (1, 2, 3)     # True, shorter tuple is smaller
+    (1, 2, 3) == (1, 2, 3) # True, completely equal
+    ```
+  - Note: Elements at corresponding positions must be comparable (e.g., cannot compare string and number)
+- **Sorting**: list.sort() sorts in-place; sorted() returns new list. Can sort dictionary items() (because items() returns list of tuples).
 
 ### Common Pitfalls
-- Index out of range (lists/strings start at 0, len() excludes last index).
-- Trying to modify tuple (TypeError: 'tuple' object does not support item assignment).
+- Index out of range (lists/strings/tuples start at 0, len() excludes last index).
+- **Tuple initialization errors**:
+  - Forgetting comma when creating single element tuple: `(1)` is integer, not tuple; should use `(1,)`
+  - Empty tuple uses `()`, but don't confuse with function parentheses
+- **Trying to modify tuple** (TypeError: 'tuple' object does not support item assignment):
+  - Tuple cannot be modified after creation: cannot `t[0] = 1`, cannot `t.append(1)`, cannot `t.remove(1)`
+  - If modification needed, should create new tuple or use list
 - KeyError when accessing non-existent dictionary key: Using `d['key']` on missing key raises error, should use `d.get('key', default)` or check `'key' in d` first.
 - Misunderstanding dictionary iteration: `for item in d:` iterates over keys, need `d[item]` to get value, or use `for k, v in d.items()` directly.
 - Confusing sort() and sorted() (former mutates list, latter returns new list).
