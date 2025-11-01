@@ -1,0 +1,649 @@
+AIE1001 Introduction to AIProgramming
+Midterm Review
+Prof. Junjie Hu
+School of Artificial Intelligence
+Part of the slides are adapted from NJU SICP 
+Scope & Reminders
+•Lecture 1–Lecture 6(Recursion)
+•Question: 
+•Single Choice (one correct option, 4*10,40 points), Multiple Choice (one or
+more correct options, 5*3,15 points)
+•Short answer question ( 20+25, 45 points)
+•Including, but not limited to : Code Fault Localization, Code Completion, Function Design 
+•Exam Duration: 1 hr
+•Remember to bring your Student ID card, and w rite your student ID 
+number to the answer sheet.
+•No cheat sheet, calculator, digital devices allowed
+
+
+Decimal number system
+•In the decimal number system, the base is 10, the symbols include 0, 1, 2, 
+3, 4, 5, 6, 7, 8, 9
+•Every number can be decomposed into the sum of a series of numbers, 
+each is represented by a positional value times a weight
+•𝑁=𝑎𝑛×10𝑛+𝑎𝑛−1×10𝑛−1+𝑎𝑛−2×10𝑛−2……+𝑎0×100+𝑎−1×
+10−1+𝑎−2×10−2…
+•𝑎𝑛is the positional value (ranging from 0 to 9), while 10𝑛represents the 
+weight 
+Binary number system
+•In the binary system, the base is 2, we use only two symbols 0 and 1
+•“10” is used when we hit 2 (逢二进一 )
+•𝑁=𝑎𝑛×2𝑛+𝑎𝑛−1×2𝑛−1+𝑎𝑛−2×2𝑛−2……+𝑎0×20+
+𝑎−1×2−1+𝑎−2×2−2…
+•𝑎𝑛is the positional value (ranging from 0 to 1), while 2𝑛represents 
+the weight 9(10)=1×23+ 0×22+ 0×21+ 1×20=1001(2)
+Hexadecimal number system
+•In the hexadecimal system, the base is 16, we use 16 symbols {0, 1, 2, 3, 4, 
+5, 6, 7, 8, 9, a, b, c, d, e, f}
+•“10” is used when we hit 16 (逢十六进一 )
+•𝑁=𝑎𝑛×16𝑛+𝑎𝑛−1×16𝑛−1+𝑎𝑛−2×16𝑛−2……+𝑎0×160+𝑎−1×
+16−1+𝑎−2×16−2…
+•𝑎𝑛is the positional value (ranging from 0 to 15), while 16𝑛represents the 
+weight 
+Notes:
+Binary number < -> Hexadecimal number 
+<-> octal number 
+<-> decimal number
+All the representations can be converted into each other
+Converting binary number into decimal number
+Example
+Practice  (10110.11)2=(?)10
+Converting octal number into decimal number
+Example
+Practice  (35.7)8=(?)10
+Converting decimal fraction into binary fraction
+Example : (0.875)10=(?)2
+0.875×2=1.75 Integer part: 1
+0.75×2=1.5 Integer part: 1
+0.5×2=1 Integer part: 1
+Answer : (0.875)10=(0.111)2
+Practice : (0.6875)10=(?)2Lower positionHigher position
+Converting decimal number into binary number
+•For a decimal number that has both integer and fractional 
+parts
+•Convert the integer and fractional parts separately
+•Example: (215.6875)10=(?)2
+
+Interactive v.s. script
+•Interactive
+You type directly to Python one line at a time and it responds
+•Script
+You enter a sequence of statements (lines) into a file using a text 
+editor and tell Python to execute the file
+Syntax Error
+
+Program steps or program flow
+•Like a recipe, a program is a sequence of steps to be done in pre-
+determined order
+•Some steps are conditional , i.e. they may be skipped
+•Sometimes, we will repeat some steps
+•Sometimes, we store a set of steps to be used over and over again in 
+future as needed
+Sequential flow
+Execute sequentially
+Outputs
+•When a program is running, it flows from one step to the next 
+•We as programmers, set up “ paths ” for the program to follow
+Conditional flow
+Program
+ Outputs
+Repeated flow
+Program Outputs
+•Loops (repeated steps) have iterative variables that change each time 
+through a loop
+•Often these iterative variables go through a sequence of numbers
+
+
+Type conversion
+•When an expression contains 
+both integer and float, 
+integers will be converted 
+into float implicitly
+•You can control this using 
+functions int() and float()•Example :
+
+String conversions
+•You can also use int() and float() to convert strings into 
+numbers
+•You will get an error if the string contains characters other 
+than numbers
+Converting numbers into string
+•We can convert numbers into string using function str()
+
+
+
+Assignment statement
+•We assign a value to a variable using the assignment operator (=)
+•An assignment statement consists of an expression on the right hand 
+side, and a variable to store the result
+Example : x = 100 –10 + x*3 –x/10
+Assignment statement
+X: 6•There is a location in the 
+memory for x
+•Whenever the value of x is 
+needed, it can be retrieved 
+from the memory
+•After the expression is 
+evaluated, the result will be 
+put back into x
+Assignment statement
+X: 107.4•There is a location in the 
+memory for x
+•Whenever the value of x is 
+needed, it can be retrieved 
+from the memory
+•After the expression is 
+evaluated, the result will be 
+put back into x
+Cascaded assignment
+•We can set multiple variables into the same value using a single 
+assignment statement
+Example
+
+Simultaneous assignment
+•The values of two variables can be exchanged using simultaneous 
+assignment
+Example
+Bad use of simultaneous assignment
+
+Operator precedence
+Example : x = 1+2**3/4*5
+Floor division
+
+divmod ()
+
+
+Conditional flow
+Program
+ Outputs
+Comparison operators
+•Boolean expressions ask a question and 
+produce a Yes/No result, which we use 
+to control program flow
+•Boolean expressions use comparison 
+operators to evaluate Yes/No or 
+True/False
+•Comparison operators check variables 
+but do not change the values of 
+variables
+•Careful!! “=“ is used for assignment
+
+Comparison operators
+
+Examples of comparison
+
+Bool()
+
+One way decisions
+
+Nested decisions
+Example
+Two way decision using else
+
+Multi -way decisions
+
+Which will never beprint ed?
+
+Example
+
+Example
+
+
+An infinite loop
+•What is wrong with this program?
+
+Definite loop
+•Quite often we have a finite set of items
+•We can use a loop, each iteration of which will be executed for each 
+item in the set, using the forstatement
+•These loops are called “definite loops” because they execute an exact 
+number of times
+•It is said that “definite loops iterate through the members of a set”
+Practice
+•Given a set of numbers, write a program to calculate 
+their sum using for loop
+Answer
+
+Practice
+•Given a set of numbers, write a program to calculate 
+their average using for loop
+Answer
+
+Search using a Boolean variable
+Example Output
+•If we want to search in a set and double check whether a specific number is in 
+that set
+•We can use a Boolean variable, set it to False at the beginning , and assign True to 
+it as long as the target number is found
+Finding the largest number 
+•Use a variable to store the largest number we have seen so far
+•If the current number is larger , we assign it to the store variable
+Example Output
+Finding the smallest number
+•Use a variable to store the smallest number we have seen so far
+•If the current number is smaller , we assign it to the store variable
+•What is the problem with this program?
+Finding the smallest number
+Example Output
+•We still use a variable to store the smallest value seen so far
+•In the first iteration, the smallest value is none , so we need to use an 
+if statement to check this
+The isand is not operator
+•Python has a “ is” operator which 
+can be used in logical expression
+•Implies “ is the same as ”
+•Similar to, but stronger than ==
+•“is not ” is also an operator
+More about Bool()
+
+
+A sample code
+Program Output
+
+Argument, parameter, and result
+ArgumentParameter
+Result
+
+Functions without return
+•When a function has 
+no return statement , 
+it will return None
+Scope of variables
+•The scope of a variable is the 
+part of program where this 
+variable can be accessed
+•A variable created inside a 
+function is referred to as a 
+local variable
+•Global variables are created 
+outside all functions and are 
+accessible to all functions in 
+their scope
+
+Scope of variables
+•Different variables may 
+share a name if they have 
+different scopes
+
+Global variable
+•In a function, you can use keyword 
+global to specify that a variable is a 
+global variable
+•Be very careful when define and 
+use global variable
+
+
+Default argument
+•Python allows you to define functions with default argument values
+•The default argument values will be passed to the function, when it is 
+invoked without arguments
+Return multiple values
+•Python allows a function to 
+return multiple values
+•The sort function returns two 
+values; when it is invoked, you 
+need to pass the returned 
+values in a simultaneous 
+assignment
+
+
+
+
+Looking inside strings
+•We can get any character in a string 
+using an index specified in square 
+brackets
+•The index value must be an integer
+which starts from zero
+•The index value can be an expression
+
+Index out of range
+•You will get an Python 
+error if you attempt to 
+index beyond the end of 
+a string
+•Be careful when 
+specifying an index value 
+
+Strings have length
+•There is a built -in function 
+len() which gives us the length
+of a string
+
+Len() function
+
+Looping through strings
+•Using a for 
+statement, we can 
+easily loop 
+through each 
+character in a 
+string
+•String is 
+essentially a listin 
+Python
+
+Practice
+•Write a program to use a while statement together 
+with len() function to loop through a given string
+Example
+
+
+
+How long is a list?
+•The len() function takes a 
+list as input and returns 
+the number of elements in 
+that list
+•Actually len() tells us the 
+number of elements in any 
+sequence (e.g. strings)
+
+Range() function
+•The range() function returns a list 
+of numbers 
+•We can construct an index loop 
+using for and an integer iterator
+
+Range() function
+•What is the output of the following code?
+•squares = [x * x for x in range(5) if x % 2 == 0]
+•A. [0, 1, 4, 9, 16]
+•B. [0, 2, 4]
+•C. [0, 4, 16] 
+•D. [0, 4, 8]
+A tale of two loops
+Example
+ Output
+Concatenating lists using +
+•Similar to strings, we 
+can add two existing 
+lists together to create 
+a new list
+
+Lists can be sliced using :
+•Remember: similar 
+to strings, the 
+second number is 
+“up to but no 
+including ”
+
+Built -in functions and lists
+•There are a number of 
+functions built into Python 
+that take lists as inputs
+•Remember the loops we 
+built? These are much 
+simpler
+
+Averaging with a list
+
+Practice
+•Write a program to instruct the user to input several 
+numbers and calculate their average using list methods
+Practice
+•The header of an email takes the following format:
+From professor.xman@uct.edu Sat Jan 5 09:14:16 2008
+For a given email header, write a program to find out the domain of 
+email address, and the month in which this email is sent
+The double split pattern
+•Sometimes we split a line one way, and then grab one piece of the 
+line and split it again
+From professor.xman@ uct.edu Sat Jan 5 09:14:16 2008
+
+
+Tuples are more efficient
+•Since Python doe snot have to build tuple structures to be 
+modifiable, they are simpler and more efficient in terms of 
+memory use and performance than lists
+•In our program when we are making “temporary variables” 
+we prefer tuples over lists
+Tuples and dictionaries
+•The item() method in 
+dictionaries returns a 
+list of (key, value) 
+tuples
+
+Tuples are comparable
+•The comparison operators work with tuples and other sequences if 
+the first item is equal . Python goes on to the next element, until it 
+finds the elements which are different
+
+Using sorted()
+•We can also do this 
+using a built -in function 
+sorted() which takes a 
+sequence as a 
+parameter and returns 
+a sorted sequence
+
+Practice
+•Write a program, which sorts the elements of a 
+dictionary by the value of each element 
+Sort by values instead of key
+•If we could construct a 
+list of tuples of the form 
+(key, value) we could sort
+by value
+•We do this with a for 
+loop that creates a list of 
+tuples
+
+Example: Finding the 10 most common words 
+in a file
+
+
+List v.s. dictionary
+•Dictionaries are similar to lists, except that they use keys instead of 
+numbers to look up values
+
+Counting with a dictionary
+•A common use of dictionary is counting how often we “see” 
+something
+
+Dictionary tracebacks
+•It is an error to reference a key which is not in the dictionary
+•We can use the inoperator to see if a key is in the dictionary
+
+Practice
+•Write a program to instruct the user to continuously input 
+some words, and use dictionary to count how many times a 
+word has been inputted before. 
+The get() method 
+•This pattern of checking to see if a keyis already in a dictionary, and 
+assuming a default value if the key is not there is so common, that 
+there is a method called get() that does this for us
+
+Practice
+•Write a program to instruct the user to input a line of texts, and use 
+dictionary to count how many times a word has been seen in this line. 
+You should use the get() method in this program.  
+Definite loops and dictionaries
+•Even though dictionaries are not stored in order , we can write a for 
+loop that goes through all elements in a dictionary –actually it goes 
+through all the keys in that dictionary and looks up the values
+
+Retrieving lists of keys and values
+•You can get a list of 
+keys , values or items
+(both) from a 
+dictionary
+
+Bonus: two iteration variables
+•We loop through the 
+key-value pairs in a 
+dictionary using two
+iteration variables
+•Each iteration, the first 
+variable is the key, and 
+the second variable is 
+the corresponding 
+value for the key
+Question:
+Which statement will cause an error? 
+•A. my_list = [1,2]; my_list.app end(1)
+•B. my_ list= [1,2]; my_list [0]=2
+•C. my_tuple = (1,2); my_tuple [0] = 3
+•D. my_dict = {'a':1}; my_dict ['b'] = 2
+Question:
+Which of the following code segments will execute without raising an 
+error? 
+A.d = {"name": "Alice"}; print(d["age"])
+B.s = [1, 2]; s.append (2)
+C.result = "hello" + ["world"]
+D.my_list = [1]; my_list.append ([1])
+E.val= int(" abc")
+
+Practice
+•Write a program to open a file and count how many 
+lines are included in this file
+Reading the whole file
+•We can read the whole file into a single string
+
+Searching through a file
+•We can put an if statement in the for loop to print the lines which 
+satisfy certain conditions
+
+Writing to a file
+•To write a file, use the open() function with ‘ w’ argument
+•Use the write() method to write to the file
+
+Example: The factorial function
+•The factorial of a positive integer n, denoted n!, is defined as follows:
+
+The recursive definition of 
+factorial function
+•The factorial function can be naturally defined in a recursive way, for 
+example, 5! = 5 · (4 ·  3 ·  2 ·  1) = 5 ·  4!
+•More generally, for a positive integer n, we can define n! to be n ·  
+(n−1)!
+•Therefore, the recursive definition of factorial function is:
+
+Solution
+What does the `factorial(4)` call return?
+The same function fact is called multiple 
+times, each time solving a simpler 
+problem
+All the frames share the same parent -
+only difference is the argument
+What n evaluates to depends upon the 
+current environment
+What is fact(3)?
+What is fact(2)?
+What is fact(1)?
+What is fact(0)?
+fact(0) is 1Recursion inenvironment
+diagram
+Recursive tree -another way to 
+visualize recursion
+fact(3)
+fact(2)
+fact(1)
+fact(0)3 
+*
+2 
+*
+1 
+*
+11126
+1deffact(n):
+2 """Calculates n!"""
+3 if n == 0:
+4 return 1
+5 else:
+6 return n *fact(n-1)
+
+The strategy of binary search
+•We call an element of the sequence a candidate if, at the current 
+stage of the search, we cannot rule out that this item matches the 
+target
+•The algorithm maintains two parameters, lowand high , such that all 
+the candidate entries have index at least lowand at most high
+•Initially, low = 0 and high = n−1 . We then compare the target value to 
+the median candidate, that is, the item data[mid] with index
+mid = (low+high)/2
+The strategy of binary search
+•If the target equals data[mid] , then we have found the item we 
+are looking for, and the search terminates successfully
+•If target < data[mid], then we recur on the first half of the 
+sequence, that is, on the interval of indices from low to mid−1
+•If target > data[mid], then we recur on the second half of the 
+sequence, that is, on the interval of indices from mid+1 to high
+Solution
+
+Practice: Power function
+•Write a program to calculate the power function 𝑓𝑥,𝑛=
+𝑥𝑛using Recursion. 
+x*x*x* …*x?
+A better recursive definition of power 
+function
+
+Solution:
+
+Example: Drawing an English ruler
+•We denote the length of the tick 
+designating a whole inch as the 
+major tick length . 
+•Between the marks for whole 
+inches, the ruler contains a series 
+of minor ticks , placed at intervals 
+of 1/2 inch, 1/4 inch, and so on. 
+•As the size of the interval 
+decreases by half, the tick length 
+decreases by one
+Recursive implementation of English 
+ruler
+•An interval with a central tick length L ≥ 1 is 
+composed of:
+An interval with a central tick length L−1
+A single tick of length L
+An interval with a central tick length L−1
+Solution
+
+The recursive 
+trace for 
+English ruler
+
+Linear Recursion
+•If a recursive function is designed so that each invocation of 
+the body makes at most one new recursive call, this is know n
+as linear recursion
+•Finding the smallest number and binary search are both 
+linear recursive algorithms
+Linear Recursion
+
+Practice: Sum of a list
+•Given a list of numbers, write a program to calculate 
+the sum of this list using recursion
+Solution:
+
+Multiple recursion
+•When a function makes two or more recursive calls, 
+we say that it uses multiple recursion
+•Drawing the English ruler is a multiple recursion 
+program
+Multiple recursion
+•When a function makes two or more recursive calls, 
+we say that it uses multiple recursion
+•Drawing the English ruler is a multiple recursion 
+program
+
+Practice: Binary sum
+•Write a function binarySum() to calculate the sum of a 
+list of numbers. Inside binarySum() two recursive calls 
+should be made
+
+Practice: Binary sum
+
+Practice: Binary sum
+
+Solution:
+
+Example : Fault localization
+There are four errors in the following code, which is intended to find the most frequent number 
+(mode) in a list. Identify the lines or concepts that are incorrect.
+
+Example : Code Completion
+This is a code completion question. Please fill in the EIGHT blanks in the given source code to 
+make it functional and provide the final output for the given test case.
+

@@ -9,7 +9,7 @@ extracted_dir = 'extracted'
 os.makedirs(extracted_dir, exist_ok=True)
 
 # List of PDFs to process
-pdf_files = [f'week{i}.pdf' for i in range(1, 7)]
+pdf_files = [f'week{i}.pdf' for i in range(1, 7)] + ['week8-midterm-review.pdf']
 
 for pdf_name in pdf_files:
     pdf_path = os.path.join(docs_dir, pdf_name)
