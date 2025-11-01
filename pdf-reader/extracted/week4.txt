@@ -1,0 +1,406 @@
+AIE100 1Introduction toAIProgramming
+Lecture 4 Function
+Prof. Junjie Hu
+School of Artificial Intelligence
+Part oftheslides are adapted from NJU SICP 
+Outline
+•Function
+•Function definition 
+•Argument, parameters
+•Return values
+•Void function
+•Global variables, local variables
+•Default argument
+•Return multiple values
+
+Stored (and reused) steps
+Program
+ Output
+This reusable paragraph of code is usually called function
+Python functions
+•There are two types of functions in Python
+Built -in functions which are part of Python, such as print(), int(), 
+float(), etc
+Functions that we define ourselves and then use
+•The names of built -in functions are usually considered 
+as new reserved words , i.e. we do not use them as 
+variable names
+Function definition
+•In Python, a function is some reusable code which can take 
+arguments as input, perform some computations, and then output 
+some results
+•Functions are defined using reserved word def
+•We call/invoke a function by using the function name, parenthesis 
+and arguments in an expression
+Argument
+Result
+
+Keypoints
+def<name>(<parameters> ):
+return<return expression>Function signature indicates name and number of 
+arguments
+Function bodydefines the 
+computation
+performed when the function is 
+applieddefsquare(x):
+returnx * x
+y =square(-2)
+Execution rule for def Statements
+1.Create a function with signature <name>(<parameters> )
+2.Set the body of that function to be everything indented after the first 
+line
+3.Bind <name>to that function in the current frameDemo
+Building our own functions
+•We create a new function using the defkey word, followed by 
+optional parameters in parenthesis
+•defstatements are a type of assignment that bind names 
+to function values
+•We indent the body of the function
+•This defines the function, but does not execute the body of the 
+function
+A sample code
+Program Output
+
+A sample code
+Program Output
+
+Parameters
+•A parameter is a variable
+which we use in the function 
+definition that is a ‘ handle ’ 
+that allows the code in the 
+function to access the 
+arguments for a particular
+function invocation
+
+Argument
+•An argument is a value we pass into the 
+function as its input when we callthe 
+function
+•We use arguments so we can direct the 
+function to do different kinds of work 
+when we call it at different times
+•We put the argument in parenthesis after 
+the name of the function
+argument
+
+Return values
+Program Output•Often a function will take its arguments , do some computation and 
+return a value to be used as the value of the function call in the 
+calling expression. The return keyword is for this purpose. 
+Return values
+•A fruitful function is one that 
+produces a result (or return 
+value )
+•The return statement ends the 
+function execution and ‘sends 
+back’ the result of the function
+
+Argument, parameter, and result
+
+Multiple parameters/arguments
+•We can define more than one 
+parameter in a function 
+definition
+•We simply add more arguments 
+when we callthe function
+•We match the number and order
+of arguments and parameters
+
+Void functions
+•When a function does not return a value, it is called a “ void ” function
+•Functions that return values are “fruitful” functions ( 有返回值函数 )
+•Void functions ( 无返回值函数 ) are “not fruitful ” 
+Functions without return
+•When a function has 
+no return statement , 
+it will return None
+Scope of variables
+•The scope of a variable is the 
+part of program where this 
+variable can be accessed
+•A variable created inside a 
+function is referred to as a 
+local variable
+•Global variables are created 
+outside all functions and are 
+accessible to all functions in 
+their scope
+
+Scope of variables
+•Different variables may 
+share a name if they have 
+different scopes
+
+Global variable
+•In a function, you can use keyword 
+global to specify that a variable is a 
+global variable
+•Be very careful when define and 
+use global variable
+
+Default argument
+•Python allows you to define functions with default argument values
+•The default argument values will be passed to the function, when it is 
+invoked without arguments
+Return multiple values
+•Python allows a function to 
+return multiple values
+•The sort function returns two 
+values; when it is invoked, you 
+need to pass the returned 
+values in a simultaneous 
+assignment
+
+To function or not function…
+•Organize your code into paragraphs -capture a complete thought and 
+name it
+•Don’t repeat yourself –name it to work once and reuse it
+•If something goes too complex, break up them into several blocks, 
+and put each of them into a function
+•Make a library of common stuffs that you do over and over again –
+perhaps share with other people
+Practice
+•Write a function to instruct the user to input the working 
+hours and hourly rate, and then return the salary. If the 
+working hours exceed 40 hours, then the extra hours 
+received 1.5 times pay. 
+Practice
+•Write a function to find and return the largest number in a 
+list, such as
+[5, 8, 2, 9, 3 ]
+[-4, -1, -7, -2]
+[100, 250, 175, 300]
+Do not use the max function.
+Outline
+•String processing
+•Basics of string
+•Index of string
+•Length of string, len()
+•Loop and counting
+•Slicing strings
+•Conditional statement 
+•String library and functions
+•File processing
+•Opening files
+•File processing
+•Searching through a file
+•Writing to a file
+String type
+•A string is a sequence of characters
+•A string literal uses quotes ‘’ or “”
+•For strings, + means “ concatenate ”
+•When a string contains numbers, it is still a string
+•We can convert numbers in a string into a number using int() or float()
+Reading and converting
+•We prefer to read data in using strings and then parse and convert 
+the data as we need
+•This gives us more control over error situations and/or bad user 
+inputs
+•Raw input numbers must be converted from strings
+Looking inside strings
+•We can get any character in a string 
+using an index specified in square 
+brackets
+•The index value must be an integer
+which starts from zero
+•The index value can be an expression
+
+Index out of range
+•You will get an Python 
+error if you attempt to 
+index beyond the end of 
+a string
+•Be careful when 
+specifying an index value 
+
+Strings have length
+•There is a built -in function 
+len() which gives us the length
+of a string
+
+Len() function
+
+Looping through strings
+•Using a for 
+statement, we can 
+easily loop 
+through each 
+character in a 
+string
+•String is 
+essentially a listin 
+Python
+
+Practice
+•Write a program to use a while statement together 
+with len() function to loop through a given string
+Loop and counting
+•This is a simple 
+statement that loops 
+through each letter in 
+a string and counts 
+the number of times 
+the loop encounters 
+the ‘a’ character
+
+Look deeper into in
+•The iteration variables “iterates” 
+through the sequence (ordered set)
+•The block (body) of the loop is 
+executed once for each value in the 
+sequence
+•The iteration variable moves through 
+all the values in the sequence
+
+•The iteration variable loops through the string, and the body of the 
+loop  is executed once for each character in that string
+
+Slicing strings
+•We can also look at any continuous 
+section of a string using colon
+operator
+•The second number is one beyond 
+the end of the slice –i.e. “ up to but 
+not including ”
+•If the second number is beyond the 
+length of the string, it stops at the 
+end
+
+Slicing strings
+•If we leave off the first 
+or second number of 
+the slice, it is assumed 
+to be the beginning or 
+end of the string 
+respectively
+
+Using ‘in’ in conditional statement
+•The inkeyword can also be 
+used to check whether one 
+string is in another string
+•The inexpression is a logical 
+expression and returns True or 
+False
+•It can be used in if or while
+statement
+
+String library
+•Python has a number of string 
+functions which are in the string 
+library
+•These functions are built -into every 
+string, we invoke them by 
+appending the function to the 
+string variable
+•These function do not modify the 
+original string, instead they return a 
+new string altered from the original 
+string
+
+https://docs.python.org/3/library/stdtypes.html#string -methods
+
+
+Searching a string
+•We can use the find() function 
+to search for a substring in a 
+string
+•find() finds the first occurrence 
+of the target sub -string
+•If the sub -string is not found, it 
+returns -1
+•Important: the string position 
+starts from 0
+
+Making everything upper or lower 
+case
+•You can convert a string 
+into upper case or lower 
+case
+•Hint: often when we use 
+find() to find a substring, 
+we convert the original 
+string into lower case 
+first, so that we don’t 
+need to worry about 
+case
+
+Search and replace
+•The replace() function is 
+like a “search and 
+replace” operation in a 
+word processor
+•It replaces all 
+occurrences of the 
+search string with the 
+replacement string
+
+Stripping whitespace
+•Sometimes we want to take a 
+string and remove whitespaces
+at the beginning and/or end
+•lstrip () and rstrip () to the left 
+and right only
+•Strip() removes both beginning 
+and ending whitespaces
+
+Prefixes
+•startswith ()function 
+checks whether a string is 
+starting with a given 
+string
+
+Example
+
+File processing
+•A text file can be thought of as a sequence of lines
+
+Opening files
+•Before we can read the contents of a file, we must tell Python which 
+file we are going to work with and what we will do with that file
+•This is done with the open() function
+•Open() returns a “ file handle ”  -a variable used to perform operations 
+on files 
+•Kind of like “File -> Open” in a word processor
+Using open()
+•handle = open (filename , mode )
+•Returns a handle used to manipulate the file
+•Filename is a string
+•Mode is optional, use ‘r’ if we want to read the file, and ‘w’ if we 
+want to write to the file
+Handle
+
+When files are missing
+
+The newline character
+•We use a new character to indicate 
+when a line ends called “ newline ”
+•We represent it as ‘ \n’ in strings 
+•Newline is still one character, not 
+two
+
+File processing
+•A text file can be thought of as a sequence of lines
+•A text file has newline at the end of each line
+
+File handle as a sequence
+•A file handle open for read can 
+be treated as a sequence of 
+strings where each line in the file 
+is a string in the sequence
+•We can use the forstatement to 
+loop through a sequence
+
+Practice
+•Write a program to open a file and count how many 
+lines are included in this file
+Reading the whole file
+•We can read the whole file into a single string
+
+Searching through a file
+•We can put an if statement in the for loop to print the lines which 
+satisfy certain conditions
+
+Writing to a file
+•To write a file, use the open() function with ‘ w’ argument
+•Use the write() method to write to the file

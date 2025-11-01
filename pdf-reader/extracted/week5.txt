@@ -1,0 +1,313 @@
+AIE1001 Introduction 
+to AI Programming
+Lecture 5 List
+Prof. Junjie Hu
+School of Artificial Intelligence
+
+Outline
+•List basics
+•List constants
+•Looking inside lists
+•Lists are mutable
+•Len() and range()
+•Two ways looping over a list
+•Concatenating (+, *) and slicing (:) lists
+•List methods
+•Building a list from scratch with list() and append()
+•Use into check if something in a list
+•Sort list with sort()
+•Built -in functions : max(), min(), sum() , etc. 
+List is kind of a collection
+•A collection allows us to put 
+many values in a single
+“variable”
+•Instead of creating a 
+separate variable for each 
+item, we put them all in 
+one “container” variable.
+
+What is not a collection
+•Most of our variables have only one value in them –when we put a 
+new value in the variable, the old value will be over -written
+
+List constants
+•List constants are surrounded 
+by square brackets and the 
+elements in the list are 
+separated by commas
+•A list element can be any 
+Python object –even another 
+list
+•A list can be empty
+
+List and definite loop -best pal
+
+Looking inside lists
+•Just like strings, we can access any single element in a list 
+using an index specified in square bracket
+
+Lists are mutable
+•Strings are “ immutable ” –
+we cannot change the 
+contents of a string unless 
+we make a new string
+•Lists are “ mutable ” –we 
+can change an element of 
+a list using index operator
+
+Mutable and immutable Variable
+
+How long is a list?
+•The len() function takes a 
+list as input and returns 
+the number of elements in 
+that list
+•Actually len() tells us the 
+number of elements in any 
+sequence (e.g. strings)
+
+Range() function
+•The range() function returns a list 
+of numbers 
+•We can construct an index loop 
+using for and an integer iterator
+
+Two ways looping over a list
+Example
+ Output
+Concatenating lists using + and *
+•Similar to strings, we 
+can add two existing 
+lists together to create 
+a new list
+•We can also repeat a 
+list with many times 
+using *
+
+Lists can be sliced using :
+•Remember: similar 
+to strings, the 
+second number is 
+“up to but no 
+including ”
+
+List methods
+https://docs.python.org/3/tutorial/datastructures.html#more -on-lists
+Building a list from scratch
+•We can create an empty list 
+using list(), and then add 
+elements using append() 
+method
+•The list stays in order , and 
+new elements are added at 
+the end of the list
+
+Is something in a list
+•Python provides two 
+operators to check whether 
+an item is in a list
+•These are logical operators 
+that return True or False
+•They do not modify the list
+
+A list is an ordered sequence
+•A list can hold many items 
+and keeps them in the order 
+until we do something to 
+change the order
+•A list can be sorted (i.e. 
+change the order)
+•The sort() method means 
+“sort yourself”
+
+Built -in functions and lists
+•There are a number of 
+functions built into Python 
+that take lists as inputs
+•Remember the loops we 
+built? These are much 
+simpler
+
+Averaging with a list
+
+Practice
+•Write a program to instruct the user to input several 
+numbers and calculate their average using list methods
+Best friends: strings and lists
+•Use the split() method to 
+break up a string into a 
+list of strings
+•We think of these as 
+words
+•We can access a particular 
+word or loop through all 
+the words
+
+•When you do not specify a 
+delimiter , multiple spaces 
+are treated like “one”  
+delimiter
+•You can specify what 
+delimiter character to use in 
+splitting
+
+Practice
+•The header of an email takes the following format:
+From professor.xman@uct.edu Sat Jan 5 09:14:16 2008
+For a given email header, write a program to find out the domain of 
+email address, and the month in which this email is sent
+The double split pattern
+•Sometimes we split a line one way, and then grab one piece of the 
+line and split it again
+From professor.xman@ uct.edu Sat Jan 5 09:14:16 2008
+
+Outline
+•Dictionary basics
+•Definition
+•List v.s. dictionary
+•Dictionary literals 
+•Counting with a dictionary
+•The get() method 
+•Retrieving lists of keys and values
+•Look through a dictionary
+•For
+•Two iteration variables -key and value
+•Tuples
+A story of two collections
+•List: a linear collection of 
+values that stay in order
+•Dictionary : a “bag” of 
+values, each with its own 
+label
+
+Dictionary
+•Dictionaries are Python’s most powerful data collection
+•Dictionaries allow us to do fast database -like operations in 
+Python
+•Dictionaries have different names in different languages
+•Associative arrays –Perl/PHP
+•Properties or Map or HashMap –Java
+•Property Bag –C#/.Net
+Dictionary
+•Lists index their entries based 
+on the position in the list
+•Dictionaries are like bags –no 
+order
+•We index the elements we put 
+in the dictionary with a 
+“lookup tag ”
+
+List v.s. dictionary
+•Dictionaries are similar to lists, except that they use keys instead of 
+numbers to look up values
+
+
+Dictionary literals (constants)
+•Dictionary literals use curly braces and have list of key:value pairs
+•You can make an empty dictionary using empty curly braces
+
+Counting with a dictionary
+•A common use of dictionary is counting how often we “see” 
+something
+
+Dictionary tracebacks
+•It is an error to reference a key which is not in the dictionary
+•We can use the inoperator to see if a key is in the dictionary
+
+Practice
+•Write a program to instruct the user to continuously input 
+some words, and use dictionary to count how many times a 
+word has been inputted before. 
+The get() method 
+•This pattern of checking to see if a keyis already in a dictionary, and 
+assuming a default value if the key is not there is so common, that 
+there is a method called get() that does this for us
+
+Practice
+•Write a program to instruct the user to input a line of texts, and use 
+dictionary to count how many times a word has been seen in this line. 
+You should use the get() method in this program.  
+Retrieving lists of keys and values
+•You can get a list of 
+keys , values or items
+(both) from a 
+dictionary
+
+Definite loops and dictionaries
+•Even though dictionaries are not stored in order , we can write a for 
+loop that goes through all elements in a dictionary –actually it goes 
+through all the keys in that dictionary and looks up the values
+
+Bonus: two iteration variables
+•We loop through the 
+key-value pairs in a 
+dictionary using two
+iteration variables
+•Each iteration, the first 
+variable is the key, and 
+the second variable is 
+the corresponding 
+value for the key
+Tuples
+•Tuples are another type of sequence that function more like a list –
+they have elements which are indexed starting from 0
+
+But, tuples are “immutable”
+•Unlike a list, once you create a tuple, you cannot change its contents 
+–similar to a string
+
+Some things that you cannot do 
+with tuples
+
+A tale of two sequences
+
+Tuples are more efficient
+•Since Python doe snot have to build tuple structures to be 
+modifiable, they are simpler and more efficient in terms of 
+memory use and performance than lists
+•In our program when we are making “temporary variables” 
+we prefer tuples over lists
+Tuples and dictionaries
+•The item() method in 
+dictionaries returns a 
+list of (key, value) 
+tuples
+
+Tuples are comparable
+•The comparison operators work with tuples and other sequences if 
+the first item is equal . Python goes on to the next element, until it 
+finds the elements which are different
+
+Sorting lists of tuples
+•We can take advantage of the ability to sort a list of tuples to get a 
+sorted version of a dictionary
+•First we sort the dictionary by the key using the items() method
+
+Using sorted()
+•We can also do this 
+using a built -in function 
+sorted() which takes a 
+sequence as a 
+parameter and returns 
+a sorted sequence
+
+Sort vs Sorted
+•Use .sort() if you want to sort a list and keep only the sorted version.
+•Use sorted() when you want a sorted copy but keep the original 
+unchanged.
+
+Practice
+•Write a program, which sorts the elements of a 
+dictionary by the value of each element 
+Sort by values instead of key
+•If we could construct a 
+list of tuples of the form 
+(key, value) we could sort
+by value
+•We do this with a for 
+loop that creates a list of 
+tuples
+
+Example: Finding the 10 most common words 
+in a file
+

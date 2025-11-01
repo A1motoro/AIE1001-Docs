@@ -1,0 +1,427 @@
+Introduction to AI Programming
+Lecture 2 Python Basics
+Prof. Junjie Hu
+School of Artificial Intelligence
+
+Outline
+•Compiler vs Interpreter
+•Interactive and Script Mode 
+•Variable, Constant, Reserved words
+•Data Types: Integer, Float, String
+•Functions: print(), int(),  float(), str(), type()
+•Call Expression and Nested Call Expression
+Interpreter
+•Interpreter ( 解释器 )is a computer program that directly executes, i.e. 
+performs, instructions written in a programming or scripting 
+language, without previously compiling them into a machine 
+language program
+Interpreter
+•Interpreter ( 解释器 )is a computer program that directly executes, i.e. 
+performs, instructions written in a programming or scripting 
+language, without previously compiling them into a machine 
+language program
+•A compiler ( 编译器 )is a computer program (or a set of programs) 
+that transforms source code written in a programming language (the 
+source language ) into another computer language (the target 
+language ), with the latter often having a binary form known as object 
+codev.s. compiler
+Interpreter v.s. compiler
+
+IsPython interpreted orcompiled ?
+https:// nedbatchelder.com /blog/201803/ is_python_interpreted_or_compiled_yes.html
+Python Interpreter 
+Interpreter
+Python Shell
+What is next?
+
+Syntax Error
+
+Early learner: syntax error
+•We need to learn the Python language so we can communicate our 
+instructions to Python. In the beginning we will make lots of mistakes and 
+speak gibberish like small children
+•When you make a mistake, the computer does not think you are “cute”. It 
+says “ syntax error ” –given that it “knows” the language and you are just 
+learning it. It seems like Python is cruel and unfeeling
+•You must remember that you are intelligent and can learn , while the 
+computer is simple and very fast –but cannot learn
+•It is easier for you to learn Python than for the computer to learn human 
+language
+The more you practice, the better you’ll be!
+Hello, world!
+•You must say something that Python interpreter can understand!!
+•Print() is a function in Python
+
+Exit()
+
+Programming scripts
+•Interactive Python is good for experiments and programs of 3 -4 lines 
+long
+•Most programs are much longer , so we have to type them in a file and 
+execute them all together
+•In this sense, we are giving Python a script
+•As convention, “ .py” is added as the suffix on the end of these files
+Interactive v.s. script
+•Interactive
+You type directly to Python one line at a time and it responds
+•Script
+You enter a sequence of statements (lines) into a file using a text 
+editor and tell Python to execute the file
+
+Elements of Python Language
+•Vocabulary/words –Variables and Reserved words
+•Sentence structure –valid syntax patterns
+•Story structure –constructing a meaningful program for some 
+purposes
+Variable
+•A variable is a named space in the memory where a programmer can 
+store data and later retrieve the data using the variable name
+•Variable names are determined by programmers
+•The value of a variable can be changed later in a program
+https://www.youtube.com/watch?v=p3q5zWCw8J4
+Rules for defining variables in Python
+•Must start with a letter or underscore _
+•Can only contain letters, numbers and underscore
+•Case sensitive
+•Good : apple, car, myNumber123, _light
+•Bad: 456aaa, #ab, var.12
+•Different : apple, Apple, APPLEcourseName _courseName
+course~Name
+courseName coursename
+Variable
+•A variable is a named space in the memory where a programmer can 
+store data and later retrieve the data using the variable name
+Memory
+>>> x=1010 xFrame
+Variable
+•A variable is a named space in the memory where a programmer can 
+store data and later retrieve the data using the variable name
+>>> x=10
+>>> x=20Memory
+10 xFrame
+Variable
+•A variable is a named space in the memory where a programmer can 
+store data and later retrieve the data using the variable name
+>>> x=10
+>>> x=20Memory
+10Frame
+20x
+Variable
+•A variable is a named space in the memory where a programmer can 
+store data and later retrieve the data using the variable name
+Memory
+>>> x=1010
+>>> x=20
+>>> print (x)
+2020An integer 
+variable is 
+immutablex
+Variable
+•A variable is a named space in the memory where a programmer can 
+store data and later retrieve the data using the variable name
+Memory
+>>> x=10
+>>> x=20
+>>> print (x)
+2020This memory 
+address will be 
+released by 
+Python when no 
+part of your code 
+references it 
+anymore.x
+Personal tips
+•Use meaningful words as variable names
+•Start with a lower letter
+•Capitalize the first letter of each word
+•Example : myBankAccountID , numOfCards , salaryAtYear1995…
+What is this code doing?
+
+Reserved words
+•You cannot use the following words as variables
+
+Constants
+•Fixed values such as numbers and letters are called 
+constants , since their values won’t change
+•String constants use single -quotes (‘) or double -quotes (“)
+Constants
+•We cannot declare a variable or value as 
+constant in Python.
+•By convention, we use uppercase 
+letters for constant names to remind 
+ourselves (and others) that these values 
+should not be changed.
+Data Type
+•In Python, variables and constants have an associated “ type ”
+•Python knows the difference between a number and a string
+•Example : 
+
+Type matters
+•Python knows what type everything is
+•Some operations are prohibited on certain types
+•You cannot “ add 1 ” to a string
+•We can check the type of something using function type()
+Types of numbers
+•Numbers in Python generally have two types :
+Integers: 1, 2, 100, -20394209
+Floating point numbers: 2.5, 3.7, 11.32309, -30.999
+•There are other number types, which are variations on 
+float and integer (e.g., complex numbers)
+Type can change
+•The type of a 
+variable can be 
+dynamically 
+changed
+•A variable’s type is 
+determined by the 
+value that is last 
+assigned to the 
+variable
+
+Type conversion
+•When an expression contains 
+both integer and float, 
+integers will be converted 
+into float implicitly
+•You can control this using 
+functions int() and float()•Example :
+
+String conversions
+•You can also use int() and float() to convert strings into 
+numbers
+•You will get an error if the string contains characters other 
+than numbers
+Converting numbers into string
+•We can convert numbers into string using function str()
+
+Sentences or lines
+Assignment statement
+Assignment with expressions
+Print statement (output statement)
+Expressions
+Types of Expressions
+An expression describes a computation and evaluates to a value
+
+Anatomy of a Call Expression
+add    (    2    ,    3    )
+Operator Operand Operand
+Operators and operands are also 
+expressions
+Evaluation of a Call Expression
+1.Evaluate
+a.Evaluate the operator subexpression
+b.Evaluate each operand subexpression
+2.Apply
+a.Apply the value of the operator subexpression to the values of the operand 
+subexpressionadd    (    2    ,    3    )
+Operator Operand Operand
+add(add(6, mul(4, 6)), mul(3, 5))
+Humans
+We like to inside inside -out
+add(add(6, mul(4, 6) ), mul(3, 5))
+add(add(6,    24    ), mul(3, 5))
+add(add(6,    24    ) , mul(3, 5))
+add( 30       , mul(3, 5))
+add( 30 , mul(3, 5) )
+add( 30 , 15   )
+add(        30       ,     15   )
+45
+Python can’t jump around in the same way we do
+Nested Call Expression
+Evaluate operator Evaluate operands Apply!
+add(add(6, mul(4, 6)), mul(3, 5))
+add1 2 3
+add(6, mul(4, 6))
+add 6mul(4, 6)
+mul 462430
+mul(3, 5)15
+mul 3545
+Expression Tree
+Outline
+•Assignment statement
+•Assignment statement, Cascaded assignment, Simultaneous 
+assignment
+•Operators and Precedence
+•Floor Division and Divmod ()
+•Augmented assignment
+•Flow
+•Sequential flow, conditional flow, repeated flow
+•Input function, Comments, *+* and “*” of string, Print()
+Assignment statement
+Assignment statement ( 赋值语句 )
+Assignment with expressions
+Print statement (output statement)
+InPython ,=means assign the value on the right to the 
+variable on the left .
+Assignment statement
+•We assign a value to a variable using the assignment operator (=)
+•An assignment statement consists of an expression on the right hand 
+side, and a variable to store the result
+Example : x = 100 –10 + x*3 –x/10
+Assignment statement
+X: 6•There is a location in the 
+memory for x
+•Whenever the value of x is 
+needed, it can be retrieved 
+from the memory
+•After the expression is 
+evaluated, the result will be 
+put back into x
+Assignment statement
+X: 107.4•There is a location in the 
+memory for x
+•Whenever the value of x is 
+needed, it can be retrieved 
+from the memory
+•After the expression is 
+evaluated, the result will be 
+put back into x
+Visualizing Assignment
+Names are bound to values in an environment
+To execute an assignment statement:
+1.Evaluate the expression to the right of =.
+2.Bind the value of the expression to the name to the left of =in the 
+current environment.
+Final Value
+BindingsNameDemo
+Cascaded assignment
+•We can set multiple variables into the same value using a single 
+assignment statement
+Example
+
+Practice
+•Write a program to exchange the values of two variables.
+Simultaneous assignment
+•The values of two variables can be exchanged using simultaneous 
+assignment
+Example
+Bad use of simultaneous assignment
+
+Order evaluation
+•When we put operators together, Python needs to know which one to 
+do first
+•This is called “operator precedence”
+•Which operator “takes precedence” over the others
+Example : X = 1 + 2*3 –4 / 5 ** 6
+Numeric expression and operators
+•We use some keys we have on 
+the keyboard to denote the 
+classic math operators
+•Asterisk (*) is the multiplication 
+operator
+•Double asterisk (**) is used to 
+denote Exponentiation (raise to 
+a power) 
+
+Operator precedence rules
+•Highest to lowest precedence rule
+Parenthesis are always with highest priority
+Power /Exponentiation
+Multiplication, division and remainder
+Addition and subtraction
+Left to right
+Operator precedence
+Example : x = 1+2**3/4*5
+Floor division
+
+Floor division
+-2//3=?
+divmod ()
+
+Augmented assignment
+>>> x=22
+>>> x=x+7
+Augmented assignment
+•The general form of augmented assignment looks like
+Example
+
+Personal tips
+•Use parenthesis
+•Keep mathematical expressions simple so that they are easy to 
+understand
+•Break up long series of math expressions to make them easy to 
+understand
+Program steps or program flow
+•Like a recipe, a program is a sequence of steps to be done in pre-
+determined order
+•Some steps are conditional , i.e. they may be skipped
+•Sometimes, we will repeat some steps
+•Sometimes, we store a set of steps to be used over and over again in 
+future as needed
+Sequential flow
+Execute sequentially
+Outputs
+•When a program is running, it flows from one step to the next 
+•We as programmers, set up “ paths ” for the program to follow
+Conditional flow
+Program
+ Outputs
+Repeated flow
+Program Outputs
+•Loops (repeated steps) have iterative variables that change each time 
+through a loop
+•Often these iterative variables go through a sequence of numbers
+What the largest number is?
+
+What the largest number is?
+
+User input
+•We can instruct Python to stop and take user inputs 
+using function input()
+•The input() function returns a string
+Practice
+•The BMI (body mass index) of a human can be 
+calculated using the following equation:
+BMI = weight (kg) ÷height ^ 2 (m)
+•Write a program to input a user’s weight and 
+height, and then output his BMI
+
+Converting user input
+•If we want to read a number using input() , we must 
+then convert the input into a number using int() or 
+float()
+•Later we will deal with bad input data
+
+Comments
+•Anything after a “#” is ignored by Python
+•Why comment?
+Describe what is going to happen in a sequence of code
+Document who wrote the code and other important information
+Turn off a line of code –usually temporarily
+String operations
+•Some operators apply to strings
+“+”: concatenation
+“*”: multiple concatenation
+•Python knows whether it is dealing with a number or 
+a string
+Practice
+•Write a program to instruct the user to input two of 
+his friends’ names, and then output a sentence “I am 
+the friend of XX and XX.”
+Output using Print()
+
+More details on print()
+
+Examples
+
+Example
+
+A powerful function -eval()
+•The eval() function takes a string argument and evaluates that string as a 
+Python expression , i.e., just as if the programmer had directly entered the 
+expression as code
+•The function returns the result of that expression
+•Eval() gives the programmers the flexibility to determine what to execute at 
+run-time
+•one should be cautious about using it in situations where users could 
+potentially cause problems with “inappropriate” input
+Example
+
+Example
+
+Other functions
+How togetasubstring from astring?
+Drawing environment diagrams
+Python Tutor (tutor.cs61a.org)
+•Useful for quick visualization or for environment diagram questions
+

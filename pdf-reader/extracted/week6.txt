@@ -1,0 +1,248 @@
+AIE1001 Introduction to AIProgramming
+Lecture 6
+Recursion
+Prof. Junjie Hu
+School of Artificial Intelligence
+Part of the slides are adapted from NJU SICP 
+Outline
+•Recursion 
+•Concept of recursion 
+•Base cases and recursive cases
+•Recursion in Python
+•Binary search
+•Linear Recursion
+•Multiple recursion
+Suppose you're waiting in line for a concert.
+You can't see the front of the line, but you want to know what your 
+place in line is. Only the first 100 people get free t -shirts!
+You can't step out of line because you'd lose your spot.
+What should you do?
+
+An iterative algorithm might say:
+1.Ask my friend to go to the front of the line.
+2.Count each person in line one -by-one.
+3.Then, tell me the answer.
+A recursive algorithm might say:
+•If you're at the front, you know you're first.
+•Otherwise, ask the person in front of you, "What 
+number in line are you?"
+•The person in front of you figures it out by asking 
+the person in front of them who asks the person 
+in front of them etc…
+•Once they get an answer, they tell you and you 
+add one to that answer.
+Recursion is useful for solving problems with a naturally 
+repeating structure -they are defined in terms of themselves
+It requires you to find patterns of smaller problems, and to 
+define the smallest problem possible
+Recursion
+Recursion
+•Recursion is a technique by which a function makes 
+one or more calls to itself during execution
+•Recursion provides an elegant and powerful 
+alternative for performing repetitive tasks
+Example: The factorial function
+•The factorial of a positive integer n, denoted n!, is defined as follows:
+•The factorial function is important because it is known to equal the 
+number of ways in which ndistinct items can be arranged into a 
+sequence, that is, the number of permutations of nitems
+
+The recursive definition
+•First, a recursive definition contains one or more base cases , 
+asimple situation with a known answer (no more function 
+calls). Without it, the function would keep calling itself 
+forever.
+•Second, it also contains one or more recursive cases , away 
+to reduce the problem to a smaller version of itself, and then 
+usethe same function to solve that smaller problem and 
+move toward the base case.
+The recursive definition of 
+factorial function
+•The factorial function can be naturally defined in a recursive way, for 
+example, 5! = 5 · (4 ·  3 ·  2 ·  1) = 5 ·  4!
+•More generally, for a positive integer n, we can define n! to be n ·  
+(n−1)!
+•Therefore, the recursive definition of factorial function is:
+Base case
+Recursive case
+Solution
+
+How Python implements recursion
+•In Python, each time a function (recursive or otherwise) is called, a 
+structure known as an activation record or frame is created in main 
+memory to keep track of what’s going on in that call.
+•This activation record stores the function call’s parameters and local 
+variables
+•If a function calls another function: Python pauses the current 
+function. Its activation record stores where in the code to 
+resume once the called function finishes (last called, first to finish ).
+The same function fact is called multiple 
+times, each time solving a simpler 
+problem
+All the frames share the same parent -
+only difference is the argument
+What n evaluates to depends upon the 
+current environment
+What is fact(3)?
+What is fact(2)?
+What is fact(1)?
+What is fact(0)?
+fact(0) is 1Recursion inenvironment
+diagram
+Recursive tree -another way to 
+visualize recursion
+fact(3)
+fact(2)
+fact(1)
+fact(0)3 
+*
+2 
+*
+1 
+*
+11126
+1deffact(n):
+2 """Calculates n!"""
+3 if n == 0:
+4 return 1
+5 else:
+6 return n *fact(n-1)
+Example: Binary search
+•A classic and very useful recursive algorithm, binary search , can be 
+used to efficiently locate a target value within a sorted sequence of n
+elements
+•When the sequence is unsorted , the standard approach to search for 
+a target value is to use a loop to examine every element, until either 
+finding the target or exhausting the data set; This is known as the 
+sequential search algorithm
+
+Binary search and sequential search
+
+Binary search
+•When the sequence is sorted and indexable , binary search is a much 
+more efficient algorithm
+•For any index j, we know that all the values stored at indices 0, . . . , 
+j−1are less than or equal to the value at index j, and all the values 
+stored at indices j+1, . . . ,n−1 are greater than or equal to that at 
+index j
+31
+Guess a number x, where x ∈[0,100]
+The strategy of binary search
+•We call an element of the sequence a candidate if, at the current 
+stage of the search, we cannot rule out that this item matches the 
+target
+•The algorithm maintains two parameters, lowand high , such that all 
+the candidate entries have index at least lowand at most high
+•Initially, low = 0 and high = n−1 . We then compare the target value to 
+the median candidate, that is, the item data[mid] with index
+mid = (low+high)/2
+The strategy of binary search
+•If the target equals data[mid] , then we have found the item we 
+are looking for, and the search terminates successfully
+•If target < data[mid], then we recur on the first half of the 
+sequence, that is, on the interval of indices from low to mid−1
+•If target > data[mid], then we recur on the second half of the 
+sequence, that is, on the interval of indices from mid+1 to high
+Solution
+
+Case 1: Target = 3
+data = [1, 3, 5, 6, 16, 78, 100, 135, 900]
+
+Case 2: Target = 900
+data = [1, 3, 5, 6, 16, 78, 100, 135, 900]
+
+Case 3: Target = 0
+data = [1, 3, 5, 6, 16, 78, 100, 135, 900]
+
+Practice: Power function
+•Write a program to calculate the power function 𝑓𝑥,𝑛=
+𝑥𝑛using Recursion. 
+x*x*x* …*x
+Solution:
+
+A better recursive definition of power 
+function
+
+Solution:
+
+Linear Recursion
+•If a recursive function is designed so that each invocation of 
+the body makes at most one new recursive call, this is know n
+as linear recursion
+•Calculating the factorial and performing binary search are 
+both linear recursive algorithms, as there is only one 
+recursive call in the function body
+Linear Recursion
+•If a recursive function is designed so that each invocation of 
+the body makes at most one new recursive call, this is know n
+as linear recursion
+•Finding the smallest number and binary search are both 
+linear recursive algorithms
+
+Practice: Sum of a list
+•Given a list of numbers, write a program to calculate 
+the sum of this list using recursion
+Solution:
+
+n=3
+n=2
+n=1
+n=0
+n=3
+n=2
+n=1
+n=0
+01
+101108
+
+Multiple recursion
+•When a function makes two or more recursive calls, 
+we say that it uses multiple recursion
+•Drawing the English ruler is a multiple recursion 
+program
+Example: Drawing an English ruler
+•We denote the length of the tick 
+designating a whole inch as the 
+major tick length . 
+•Between the marks for whole 
+inches, the ruler contains a series 
+of minor ticks , placed at intervals 
+of 1/2 inch, 1/4 inch, and so on. 
+•As the size of the interval 
+decreases by half, the tick length 
+decreases by one
+Recursive implementation of English 
+ruler
+•An interval with a central tick length n≥ 1 is 
+composed of:
+An interval with a central tick length n−1
+A single tick of length n
+An interval with a central tick length n−1
+
+Solution
+
+
+The recursive 
+trace for 
+English ruler
+
+Practice: Binary sum
+•Write a function binarySum() to calculate the sum of a 
+list of numbers. Inside binarySum() two recursive calls 
+should be made
+
+Practice: Binary sum
+
+Practice: Binary sum
+
+Solution:
+
+Practice: Fibonacci sequence
+•The Fibonacci Sequence is a series of numbers starting with 0and 1, 
+where each succeeding number is the sum of the two preceding 
+numbers. The sequence goes on infinitely. So, the sequence begins as :
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, …
+Solution:
+•The ftells Python to evaluate expressions inside {}and insert them into 
+the string.
+•Very useful for dynamic text formatting.

@@ -1,0 +1,485 @@
+Introduction to AI Programmin g
+Lecture 1 Introduction
+Prof. Junjie Hu
+School of Artificial Intelligence
+
+Contact
+•Email: hujunjie @cuhk.edu.cn
+•Office hour: Fri.10 am –11 am
+(Teaching A 409 B )
+Go-toPerson
+•Lectures: Me
+•Assignments: TA
+•The corresponding TAname and email willlikely beonthe
+assignment.
+•Different assignments have different TAs
+•Tutorials: TA
+•Different tutorial sessions have different TAs
+Learning Objectives
+•The basics of computer programming using Python
+•Basic elements of computer systems , key programming 
+concepts , problem solving and basic algorithm desi gn
+•Program AIapplications using Python
+(Video: What isAI?)
+Key Topics
+•Introduction to modern computers
+•Preliminary knowledge for computer programming
+•Basic introduction to Python language
+•Data types and operators in Python language
+•Input/output
+•Flow control and loop
+•Function
+•Basic data structure
+•Recursion
+•Introduction to algorithm design
+•Introduction to object oriented programming
+•Introduction toAIapplications (CV, NLP)
+•Introduction toAI-assisted programming
+Assessment
+Assignments 40% 
+Mid-term quiz 20%
+Final exam 40%
+Assignments (40%)
+Online Judge Quiz 2%
+Assignments (8+10+10+10) %
+-Please come toourfirst tutorial session ,where wewillintroduce how touse
+theOnline Judge platform, which willbeused formost oftheassignment
+submission.
+-The submission ofasimple task willaccount for2%ofthegrade inthecourse.
+Course Materials
+•All lecture notes and sample code used in classes will 
+be provided to students via Blackboard
+•Recommended readings
+Online resources: https://www.python.org/doc/
+Online book: https://www.composingprograms.com/
+Learning Python, 5th Edition , by Mark Lutz, Publisher: O’Reilly 
+media
+Course Components
+Activity Hours/week
+Lecture 70+10 minutes ×2
+Tutorial 50 minutes ×1
+Note: Tutorial starts from next week. This week wedon’t have tutorials!
+Indicative Teaching Plans
+Week Content/ topic/ activity
+1Introduction to modern computers;
+Preliminary knowledge for computer programming;
+2Basic introduction to Python language;
+Data types and operators in Python language;
+Input/output;
+3 Flow control and loop;
+4 Function;
+5 List,dictionary, tuple ;
+6 Recursion and algorithm design
+7 Review and Midterm
+8 Introduction to object oriented programming , part I
+9 Introduction to object oriented programming, part II
+10 Data structure
+11 Image processing
+12 Natural language processing
+13 Programming intheeraofAI
+14 Review for final exam;
+What is Artificial Intelligence 
+(Video: AI)
+Impact of AI
+•The First Industrial Revolution: Steam engine
+•The Second Industrial Revolution: Electricity
+•The Third Industrial Revolution:  Information technology
+•The Forth Industrial Revolution: Artificial Intelligence 
+Impact of AI
+
+What Can AI Do?
+•Go
+
+What Can AI Do?
+•Protein structure prediction -AlphaFold (Nobel prize)
+
+What Can AI Do?
+•Video generation
+
+What Can AI Do?
+•Voice generation
+
+What Can AI Do?
+•Self-driving Car
+
+What Can AI Do?
+•Robot locomotion
+
+What Can AI Do?
+•Robot manipulation
+
+Current AI Limitations
+•Not robust
+•Not generable in 3D real -world
+•Highly training cost
+•Relying on large models
+•Relying on huge amount of data
+•etc.
+Your chance!(Video: Failure cases)
+Why learn programming? 
+•Computer is built to help people solve problems
+•(Video: computer science basics, hardware and
+software)
+•Computer does not understand what we say
+•We need to communicate with computers using 
+their languages ( computer programming language )
+•Assembly, C, C++, Java and Python
+
+AIProgrammer
+•Professional programmer writes 
+computer programs and develops 
+software
+•A programmer can earn up to 500k –1m 
+USD in Google!!
+•Software and AIare huge industries . 
+
+Why be a AI programmer?
+•Programming is pervasive in your life, even if you are NOT in 
+the IT industry
+Electrical/electronic engineer –control program
+Economist –mathematical modeling
+Salesman –analyzing sales data
+…
+(Video: Should Ilearn tocode?)
+Probability & 
+Statistics
+Linear Algebra
+Calculus
+Discrete Math
+…
+HardwareSoftware
+Slides adapted from NJU SICP What iscomputer science and AI:bigpicture
+ArchitecturesOperating SystemDatabase Computer Network
+Programming Language / CompilerSoftware EngineeringNatural Language Processing Computer VisionRobotics
+SecurityInformation Retrieval … Machine Learning
+How tomake
+computer
+better and
+easy touseHow touse
+computer
+tosolve
+real-world
+problemsWhat iscomputer science and AI:bigpicture
+Slides adapted from NJU SICP ArchitecturesOperating SystemDatabase Computer Network
+Programming Language / CompilerSoftware EngineeringNatural Language Processing Computer VisionRobotics
+SecurityInformation Retrieval …
+Probability & 
+Statistics
+Linear Algebra
+Calculus
+Discrete Math
+…Machine Learning
+Probability & 
+Statistics
+Linear Algebra
+Calculus
+Discrete Math
+…AIforX
+XforAIAI
+Slides adapted from NJU SICP What iscomputer science and AI:bigpicture
+ArchitecturesOperating SystemDatabase Computer Network
+Programming Language / CompilerSoftware EngineeringNatural Language Processing Computer VisionRobotics
+SecurityInformation Retrieval … Machine Learning
+What is Code? Software? Program?
+•A sequence of instructions
+•Computers take the instructions and execute them
+•It is a little piece of our intelligence in the computer
+•Intelligence is re-usable
+Programs for human
+(Video: Algorithms)
+•Making an instant coffee
+Computers are good at following instructions
+•Humans can easily make mistakes when following a set of 
+instructions
+•On the contrary, computers (usually) won’t make mistakes , 
+regardless of they are given 10 or 10 billion instructions !!
+Computer Hardware
+ProgramHard disks, CDs, 
+DVDs, USBs
+Key components in a computer
+•Central processing unit (CPU): execute your program. Similar to human 
+brain, very fast but not that smart
+•Input device : take inputs from users or other devices
+•Output device : output information to users or other devices
+•Main memory : store data, fast and temporary storage
+•Secondary memory : slower but large size, permanent storage
+Von Neumann Architecture
+•The modern computer 
+architecture is proposed by John 
+Von Neumann
+
+The theoretical foundation of 
+computer science
+•The theoretical foundation of 
+computer science is built by Alan 
+Turing
+•Father of theoretical computer science 
+and artificial intelligence
+•Computability theory and Turing test
+
+Central Processing Unit
+•A processor contains two units, a control unit (CU) and an 
+arithmetic/logic unit (ALU)
+•CUis used to fetch commands from the memory
+•ALU contains the electric circuits which can execute 
+commands
+Central Processing Unit
+•Processor manufacturer: Intel, AMD, ARM , etc
+Memory/Storage
+•High speed cache
+•Internal RAM
+•Internal ROM 
+•Flash
+•Hard disk
+
+Input/output devices
+•Input devices : mouse, 
+keyboard, panel, touch screen, 
+audio input, mind reading, etc
+•Output devices : screen, audio 
+output, etc
+
+How the hard disk works
+
+What can a computer actually understand?
+•How canacomputer understand anumber (e.g., 8)?
+Low level language –Assembly Language
+•An assembly language is a low -level 
+programming language, in which there is a 
+very strong (generally one -to-one) 
+correspondence between the language and 
+machine code instructions.
+•Each assembly language is specific to a 
+particular computer architecture
+•Assembly language is converted into 
+executable machine code by a utility 
+program referred to as an assembler
+
+C Language (1969 -1973)
+•C was developed by Dennis Ritchie between 1969 and 1973 at AT&T Bell Labs
+•One of the early high -level programming language
+•Somewhere between assembly and other high level languages
+•Provide powerful functionalities for low level memory manipulations
+•Have the highest efficiency within high level languages
+•Very widely used in low level applications, such as operating systems, embedded 
+programming, super computers, etc
+C++ Language (1979)
+•C++ was developed by Bjarne Stroustrup at Bell Labs since 1979
+•Inherent major features of C
+•An object oriented programming language, supporting code reuse
+•High efficiency and powerful in low level memory manipulation
+•Still platform dependent
+Java Language (1995)
+•Java was developed by James Gosling at Sun Microsystems (which has 
+since been acquired by Oracle Corporation) and released in 1995
+•A new generation of general -purpose object oriented programming 
+language
+•Platform independent, “"write once, run anywhere” (WORA)
+•Java is one of the most popular programming languages currently in 
+use
+Python (1991)
+•Developed by Guido van Rossum in 1989, and formally released in 1991
+•An open source, object oriented programming language
+•Powerful libraries
+•Powerful interfaces to integrate other programming languages (C/C++, 
+Java, and many other languages)
+•Programming language of the year 2010
+Language efficiency v.s. development efficiency
+•High level languages cannot be executed directly
+•High level languages must be converted into low level languages first
+•Lower level languages have higher language efficiency (they are faster to 
+run on a computer)
+•Higher level languages have higher development efficiency (it is easier to 
+write programs in these languages )
+•(Video: Programming Languages)
+Operating Systems
+•The operating system (OS) is a low level program , which 
+provides all basic services for managing and controlling a 
+computer’s activities
+•Applications are programs which are built based upon an 
+OS
+•Main functions of an OS:
+Controlling and monitoring system activities
+Allocating and assigning system resources
+Scheduling operations
+(Demo: mac terminal)
+•Popular OS: Windows, Mac OS, Linux, iOS, Android…
+(Video: Operating System)
+Abstraction
+•Machine language -> Assembly -> C->Python
+•Hardware ->OS->Apps/Software applications
+•Binary digits ->Primitive data types ->Data structures
+Data Representation and Conversion
+•We use positional notation ( 进位记数法 ) to represent or encode numbers 
+in a computer
+•Data are stored essentially as binary numbers in a computer
+•In practice, we usually represent data using either binary (二进制 ), decimal 
+(十进制 ), octal (八进制 ) or hexadecimal ( 十六进制 )number systems
+•We may need to convert data between different number systems
+(Video: Binary)10
+The basic idea of positional notation
+•Each positional number system contains two elements, a base (基数 )
+and a set of symbols
+•Using the decimal system ( 十进制系统 ) as an example, its base is 10 , 
+and the symbols are {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+•When a number “hits” 9, the next number will not be a different 
+symbol, but a “1” followed by a “0” (逢十进一 )
+Decimal number system
+•In the decimal number system, the base is 10, the symbols include 0, 1, 2, 
+3, 4, 5, 6, 7, 8, 9
+•Every number can be decomposed into the sum of a series of numbers, 
+each is represented by a positional value times a weight
+•𝑁=𝑎𝑛×10𝑛+𝑎𝑛−1×10𝑛−1+𝑎𝑛−2×10𝑛−2……+𝑎0×100+𝑎−1×
+10−1+𝑎−2×10−2…
+•𝑎𝑛is the positional value (ranging from 0 to 9), while 10𝑛represents the 
+weight 
+Binary number system
+•In the binary system, the base is 2, we use only two symbols 0 and 1
+•“10” is used when we hit 2 (逢二进一 )
+•𝑁=𝑎𝑛×2𝑛+𝑎𝑛−1×2𝑛−1+𝑎𝑛−2×2𝑛−2……+𝑎0×20+
+𝑎−1×2−1+𝑎−2×2−2…
+•𝑎𝑛is the positional value (ranging from 0 to 1), while 2𝑛represents 
+the weight 9(10)=1×23+ 0×22+ 0×21+ 1×20=1001(2)
+Why use binary number?
+•Easy to implement physically
+•Simple calculation rules
+•Easy to combine arithmetic and logic operations
+Hexadecimal number system
+•In the hexadecimal system, the base is 16, we use 16 symbols {0, 1, 2, 3, 4, 
+5, 6, 7, 8, 9, a, b, c, d, e, f}
+•“10” is used when we hit 16 (逢十六进一 )
+•𝑁=𝑎𝑛×16𝑛+𝑎𝑛−1×16𝑛−1+𝑎𝑛−2×16𝑛−2……+𝑎0×160+𝑎−1×
+16−1+𝑎−2×16−2…
+•𝑎𝑛is the positional value (ranging from 0 to 15), while 16𝑛represents the 
+weight 
+Octal number system
+
+Converting binary number into decimal number
+Example
+Practice  (10110.11)2=(?)10
+Converting binary number into decimal number
+Answer
+Converting octal number into decimal number
+Example
+Practice  (35.7)8=(?)10
+Converting octal number into decimal number
+Answer
+
+Converting hexadecimal number into decimal 
+number
+Example
+Practice     (𝐴7𝐷.𝐸)16=(?)10
+Converting hexadecimal number into decimal 
+number
+Answer
+Converting other number system into decimal 
+system
+•Other number system can also be converted into 
+decimal system in a similar way
+•We just need to change the corresponding base
+Converting decimal integer into binary integer
+Example : (57)10=(?)2
+Higher positionLower position
+(Video: decimal tobinary)
+Converting decimal fraction into binary fraction
+Example : (0.875)10=(?)2
+0.875×2=1.75 Integer part: 1
+0.75×2=1.5 Integer part: 1
+0.5×2=1 Integer part: 1
+Answer : (0.875)10=(0.111)2
+Practice : (0.6875)10=(?)2Lower positionHigher position
+Converting decimal fraction into binary fraction
+Answer :
+0.6875×2=1.375 Integer part: 1
+0.375×2=0.75 Integer part: 0
+0.75×2=1.5              Integer part: 1
+0.5×2=1 Integer part: 1
+So, (0.6875)10=(0.1011)2Lower positionHigher position
+Converting decimal number into binary number
+•For a decimal number that has both integer and fractional 
+parts
+•Convert the integer and fractional parts separately
+•Example: (215.6875)10=(?)2
+Converting decimal number into binary number
+Answer :
+Correction: should be6875
+The one -to-one relationship between binary and 
+octal numbers
+There is a “one -to-one” (一一对应 ) relationship between three digits 
+binary number and one digit octal number
+(0)8=(000)2
+(1)8=(001)2
+(2)8=(010)2
+(3)8=(011)2
+(4)8=(100)2
+(5)8=(101)2
+(6)8=(110)2
+(7)8=(111)2
+Converting octal number into binary number
+•Convert each octal digit into binary number of three digits
+•Keep the digit order unchanged
+•Example: (0.754)8=(?)2
+•Practice: (16.327)8=(?)2
+
+Converting octal number into binary number
+Answer :
+Converting hexadecimal number into binary 
+number
+•Convert each hexadecimal digit into binary number of four digits
+•Keep the digit order unchanged
+•Example: (4𝐶.2𝐸)16=(?)2
+•Practice: (𝐴𝐷.7𝐹)16=(?)2
+
+Converting hexadecimal number into binary 
+number
+Answer :
+
+Converting binary number into octal number
+•Starting from lower positions, convert every three digits of the integer part
+into a octal digit
+•When there is not enough higher positions in the integer part , fill with 0
+•Starting from higher positions, convert every three digits of the fractional 
+part into a octal digit
+•When there is not enough lower positions in the fractional part , fill with 0
+•Keep the digit order unchanged
+Converting binary number into octal number
+Example:
+Practice:
+
+Converting binary number into octal number
+Answer :
+Converting binary number into hexadecimal 
+number
+•Starting from lower positions, convert every four digits of the integer 
+part into a octal digit
+•When there is not enough higher positions in the integer part , fill with 0
+•Starting from higher positions, convert every four digits of the fractional 
+part into a octal digit
+•When there is not enough lower positions in the fractional part , fill with 
+0
+•Keep the digit order unchanged
+Converting binary number into hexadecimal 
+number
+Example:
+The units of information (data) 
+•Bit (比特 /位): a binary digit which takes either 0 or 1
+•Bit is the smallest information unit in computer programming
+•Byte (字节 ): 1 byte = 8 bits, every English character is represented by 1 
+byte
+•KB (千字节 )：1 KB = 2^10 B = 1024 B
+•MB (兆字节 )：1MB = 2^20 B = 1024 KB
+•GB (千兆字节 )：1GB = 2^30 B = 1024 MB
+•TB (兆兆字节 )：1TB = 2^40 B = 1024 GB
+Memory and addressing
+•A computer’s memory consists 
+of an ordered sequence of 
+bytes for storing data
+•Every location in the memory 
+has a unique address
+•The key difference between 
+high and low level 
+programming languages is 
+whether programmer has to 
+deal with memory addressing 
+directly
+

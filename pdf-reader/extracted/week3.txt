@@ -1,0 +1,317 @@
+Introduction to AI Programming
+Lecture 3 Flow Control
+Prof. Junjie Hu
+School of Artificial Intelligence
+
+Outline
+•Comparison 
+•Comparison operators
+•String comparison, ASCII code/Unicode
+•Floating -point comparison
+•Boolean type and Bool()
+•Decisions in Conditional flow
+•One way decisions
+•Nested decisions
+•Two way decisions
+•Multi -way decision
+Conditional flow
+Program
+ Outputs
+Comparison operators
+•Boolean expressions ask a question and 
+produce a Yes/No result, which we use 
+to control program flow
+•Boolean expressions use comparison 
+operators to evaluate Yes/No or 
+True/False
+•Comparison operators check variables 
+but do not change the values of 
+variables
+•Careful!! “=“ is used for assignment
+
+Comparison operators
+x=5
+x==5
+Comparison operators
+
+Examples of comparison
+
+Examples of comparison
+•String comparison is lexicographical
+ASCII Code
+•American Standard Code for Information Interchange
+•It’s like a dictionary that tells the computer which number 
+represents which character (letters, digits, punctuation, and 
+control symbols)
+•Computers only understand numbers (binary: 0 and 1).
+To store and process tex t(like "A","hello" , or"123" ), we need a 
+way to convert characters into numbers and back again.
+•Supports 128 characters (English letters, numbers, and a few 
+symbols).
+ASCII Code
+•32-126 are printable characters
+
+Unicode
+•Universal character encoding standard that 
+maps every character and symbol from every 
+language to a unique number, called a code point .
+•ASCII only supports 128 characters (English letters, 
+numbers, and a few symbols ).
+•Aninternational version of ASCII —it can 
+represent far more than just English letters and 
+symbols .
+•Asingle standard that works across all platforms 
+and languages
+•ASCII is a subset of Unicode
+https:// www.youtube.com /watch?v =MijmeoH9LT4
+
+Examples of comparison
+•String comparison is lexicographical
+Examples of comparison
+•Floating -point comparison
+Floating point math
+•Floating point numbers areapproximated
+•Rational numbers (such as 0.1, which is 1/ 10) whose denominator is 
+not a power of two cannot be exactly represented
+•0.100000000000000005551115123125782702118158340454101562
+5
+•Python ’sfloat is an IEEE -754 double -precision number (64 bits ).It can 
+only store about 15–17 significant decimal digits precisely.
+https:// stackoverflow.com /questions/588004/ is-floating -point -math -broken?page =1&tab= votes#tab -top
+https:// www.youtube.com /watch?v =PZRI1IfStY0
+Boolean type
+•Python contains a built -in Boolean type , which takes two 
+values True/False
+George Boole (1815 -1864): Mathematician, inventor of mathematical 
+logic, significant contributions to differential and difference equations
+
+Boolean type
+•Python contains a built -in Boolean type , which takes two 
+values True/False
+•Number 0 can also be used to represent False. All other 
+numbers represent True
+Boolean type
+•Falsy values (evaluates to False):
+•None
+•False
+•0, 0.0, 0j (numeric zero in any type)
+•Empty sequences/collections: "", [], {}, set(), range(0)
+•Everything else is truthy (evaluates to True).
+Bool()
+
+One way decisions
+
+Indentation
+•Increase indent : indent after an ifor forstatement (after :)
+•Maintain indent : to indicate the scope of the block (which lines are 
+affected by the if/for )
+•Decrease indent : to back to the level of the if statement or for
+
+Indentation
+•Blank lines are ignored –they do not affect indentation
+•Comments on a line by themselves are ignored w.r.t. indentation
+
+Increase /maintain /decrease
+•Increase /maintain after 
+if/for statements
+•Decrease to indicate the 
+end of a block
+•Blank lines and 
+comments are ignored
+Nested decisions
+Example
+Mental begin/end
+
+Too many nested decisions will be a disaster…
+Two way decisions
+•Sometimes we want to do one 
+thing when the logical expression 
+is true, and another thing when it 
+is false
+•It is like a fork in the road, we need 
+to choose one or the other path , 
+but not both
+
+Two way decision using else
+
+Tips on if -else
+•Else must come after if
+•Use indentation to match ifand else
+Example
+
+Afirst look atListandTuple
+•Tostore asequence ofelements (e.g., numbers)
+•Access anysingle element using anindex specified insquare bracket
+•Lists aremutable, while Tuples arenot
+
+Practice
+•Write a program to instruct a user to input a date (both 
+month and day), and then output the new month and day 
+when the inputted date is advanced by one day (leap years 
+are ignored)
+Answer
+
+Multi -way decisions
+
+Multi -way decision
+
+Multi -way decision
+
+Which will never beprint ed?
+
+Practice
+•Write a program to instruct the user to input the working 
+hours and hourly rate, and then output the salary. If the 
+working hours exceed 40 hours, then the extra hours 
+received 1.5 times pay. 
+Outline
+•Logical operators
+•Try/except structure
+•Repeated Flow
+•Infinite loop
+•Break
+•Continue
+•Indefinite loop (while), Definite loop (for)
+•Identity operators
+Logical operators
+•Logical operators can be used to combine several 
+logical expressions into a single expression
+•Python has three logical operators: not, and, or
+
+Example
+
+Example
+
+Try/except structure
+•You surround a dangerous part of code with try/except
+•If the code in try block works , the except block is skipped
+•If the code in try block fails, the except block will be executed
+
+Example
+
+Use try/except to capture errors
+•When the first conversion fails, it just 
+stops into the except block , and the 
+program continues
+•When the second conversion 
+succeeds , it just skips the except 
+block
+Try/except
+
+Example
+
+Repeated flow
+Program Outputs
+•Loops (repeated steps) have iterative variables that change each time 
+through a loop
+•Often these iterative variables go through a sequence of numbers
+An infinite loop
+•What is wrong with this program?
+
+Another loop
+•What is wrong with this program?
+
+Breaking out of a loop
+•The break statement ends the current loop, and jumps to the 
+statement which directly follows the loop
+
+Finishing an iteration with continue
+•The continue statement ends the current iteration, and start 
+the next iteration immediately
+
+Indefinite loop
+•While loops are called “indefinite loops”, since they keep going until a 
+logical condition becomes false
+•Till now, the loops we have seen are relatively easy to check whether 
+they will terminate 
+•Sometimes it can be hard to determine whether a loop will terminate
+Definite loop
+•Quite often we have a finite set of items
+•We can use a loop, each iteration of which will be executed for each 
+item in the set, using the forstatement
+•These loops are called “definite loops” because they execute an exact 
+number of times
+•It is said that “definite loops iterate through the members of a set”
+A simple for loop
+Example Output
+For loop
+Example Output
+•For loops (definite loops) have explicit iteration variables that change 
+each time through a loop. 
+•These iteration variables move through a sequence or a set 
+In
+•The iteration variable “ iterates ” 
+through a sequence (ordered set)
+•The block (body) of the code is 
+executed once for each value inthe 
+sequence
+•The iteration variable moves 
+through allof the values in the 
+sequence
+Sequence with 
+five elements Iteration variable
+Another example
+Example Output
+Loop samples
+•Note: though these examples are simple, the patterns apply 
+to all kinds of loops
+Making “smart” loops
+•The trick is “knowing” something 
+about the whole loop when you 
+are stuck writing code that only 
+sees one entry at a time
+
+Looping through a set
+Example Output
+Finding the largest number 
+•Use a variable to store the largest number we have seen so far
+•If the current number is larger , we assign it to the store variable
+Example Output
+
+Counting in a loop
+•To count how many times we have executed a loop, we can introduce 
+a counting variable, which increases itself in each iteration
+Example Output
+Practice
+•Given a set of numbers, write a program to calculate 
+their sum using for loop
+Answer
+
+Practice
+•Given a set of numbers, write a program to calculate 
+their average using for loop
+Answer
+
+Filtering in a loop 
+•We can use an ifstatement in a loop to catch/filter the values we are 
+interested at
+Example Output
+Search using a Boolean variable
+Example Output
+•If we want to search in a set and double check whether a specific number is in 
+that set
+•We can use a Boolean variable, set it to False at the beginning , and assign True to 
+it as long as the target number is found
+Finding the largest number 
+•Use a variable to store the largest number we have seen so far
+•If the current number is larger , we assign it to the store variable
+Example Output
+Finding the smallest number
+•Use a variable to store the smallest number we have seen so far
+•If the current number is smaller , we assign it to the store variable
+•What is the problem with this program?
+Finding the smallest number
+Example Output
+•We still use a variable to store the smallest value seen so far
+•In the first iteration, the smallest value is none , so we need to use an 
+if statement to check this
+Identity operators
+•isand is not operator
+•Python has a “ is” operator which 
+can be used in logical expression
+•Implies “ is the same as ”
+•Similar to, but stronger than ==
+•“is not ” is also an operator
+
+Identity operators
+Example Output
