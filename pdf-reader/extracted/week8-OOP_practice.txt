@@ -1,0 +1,196 @@
+•
+Definition: Objects whose contents 
+can be changed 
+without changing their identity.
+•
+Lists 
+(list)
+•
+Dictionaries (
+dict
+)
+•
+User
+-
+defined 
+objects (if their attributes can be modified)
+Mutable objects
+numbers 
+=
+[
+1
+, 
+2
+, 
+3
+] 
+numbers[
+0
+] 
+=
+10
+# Change an 
+element
+print
+(numbers
+) 
+# Output: [10, 2, 3]
+Immutable 
+objects
+•
+Definition
+: Objects whose contents 
+cannot be 
+changed 
+after creation; any modification creates a 
+new object.
+•
+Integers 
+(
+int
+)
+•
+Floats (float)
+•
+Strings (
+str
+)
+•
+Tuples (tuple
+)
+name 
+=
+"Alice"
+name 
+=
+name.replace
+(
+"A"
+, 
+"M
+"
+)
+print
+(name)
+Even though it looks like we changed
+name
+, the original 
+string
+"Alice"
+remained unchanged, and Python returned 
+a
+new string
+.
+Practice
+•
+What would be the output of the above program?
+
+Practice
+•
+What would be the output of the above program?
+Practice
+•
+What would be the output of the above program?
+Practice
+•
+What would be the output of the above program?
+
+Practice
+•
+What would be the output of the above program?
+
+•
+What would be the output of the above program?
+Practice
+Practice
+•
+What would be the output of the above program?
+Practice
+•
+What would be the output of the above program?
+
+Practice
+•
+What would be the output of the above program?
+
+Practice
+•
+What would be the output of the above program?
+Practice
+(The Rectangle class) Following the example of the Circle class, design a 
+class named Rectangle to represent a rectangle. The class contains:
+■
+Two data fields named width and height.
+■
+A constructor that creates a rectangle with the specified width and 
+height.
+The default values are 1 and 2 for the width and height, respectively.
+■
+A method named 
+getArea
+() that returns the area of this rectangle.
+■
+A method named 
+getPerimeter
+() that returns the perimeter.
+Answer
+
+Practice
+(The Stock class) Design a class named Stock to represent a company’s stock that contains:
+■
+A private string data field named symbol for the stock’s symbol.
+■
+A private string data field named name for the stock’s name.
+■
+A private float data field named 
+previousClosingPrice
+that stores the stock price for the previous 
+day.
+■
+A private float data field named 
+currentPrice
+that stores the stock price for the current time.
+■
+A constructor that creates a stock with the specified symbol, name, previous price, and current 
+price.
+■
+A get method for returning the stock name.
+■
+A get method for returning the stock symbol.
+■
+Get and set methods for getting/setting the stock’s previous price. 
+■
+Get and set methods for getting/setting the stock’s current price.
+■
+A method named 
+getChangePercent
+() that returns the percentage changed from 
+previousClosingPrice
+to 
+currentPrice
+.
+
+
+Practice
+1. Create 
+your own class
+named
+Student.
+2. Add 
+attributes
+to store details about each student, such as 
+name, age, grade, ID number, and major.
+3. Add 
+methods
+(operations) to:
+•
+Check if the student passed or failed based on their grade.
+•
+Update their grade.
+•
+Display student 
+details.
+•
+Classify their performance into categories (Excellent, Good, 
+Average, Poor).
+

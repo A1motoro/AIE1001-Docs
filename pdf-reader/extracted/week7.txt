@@ -1,0 +1,918 @@
+AIE 1001 Introduction to AI Programming
+Lecture 
+7 
+Object Oriented Programming
+Prof. 
+Junjie
+Hu
+School of Artificial Intelligence
+
+Outline
+•
+Basics of 
+object oriented programming
+•
+Object, Class, Methods, Data fields
+•
+Key elements of an 
+object
+•
+Why we need object oriented programming
+?
+•
+Built
+-
+in Class and Custom 
+Class
+•
+Define 
+class
+•
+Self, Scope 
+of 
+self, Constructor
+•
+Accessing 
+member of objects
+•
+Mutable 
+objects
+•
+Hiding data 
+fields
+•
+Abstraction and encapsulation
+Key
+points
+function
+self
+method
+constructor
+data
+field
+__
+init
+__()
+object
+class
+
+Circle
+1
+Circle
+2
+Circle
+blueprint
+radius
+fillColor
+getArea
+()
+Circle
+1
+Circle
+2
+Circle
+blueprint
+radius
+=
+3
+fillColor
+=
+’blue’
+getArea
+()
+radius
+=
+5
+fillColor
+=
+’orange’
+getArea
+()
+Circle
+1
+Circle
+2
+Circle
+blueprint
+radius
+=
+3
+fillColor
+=
+’blue’
+getArea
+()
+radius
+=
+5
+fillColor
+=
+’orange’
+getArea
+()
+object
+Object
+•
+An 
+object
+represents an entity in 
+the real world that can be 
+distinctly identified.
+•
+Examples
+: a student, a desk, a 
+circle, a button, and even a loan
+•
+An object has a unique 
+identity
+, 
+state
+, and 
+behaviours
+
+Object
+•
+In Python, 
+everything
+is an 
+object (number, string, 
+etc
+)
+•
+You can use the 
+id() 
+function 
+and 
+type()
+function to get 
+information about an object
+
+ID and type
+•
+The 
+id
+of an object is automatically assigned a unique integer by 
+Python when the program is executed
+•
+The id for the object 
+will not be changed 
+during the execution of the 
+program
+•
+The 
+type
+for the object is determined by Python according to the 
+value of the object
+Variable is actually only a reference
+•
+A 
+variable
+in Python is actually a 
+reference
+to an object.
+
+Circle
+1
+Circle
+2
+Circle
+blueprint
+radius
+=
+3
+fillColor
+=
+’blue’
+getArea
+()
+radius
+=
+5
+fillColor
+=
+’oranges’
+getArea
+()
+object
+class
+radius
+fillColor
+getArea
+()
+Class
+•
+Objects of the same kind are defined by using a common 
+class
+•
+The relationship between Classes and objects is analogous to 
+that between an apple
+-
+pie recipe and apple pies
+•
+A Python 
+class
+uses 
+variables
+to store data fields and defines 
+methods
+to perform actions
+•
+A class is a 
+contract
+—
+also sometimes called a template or 
+blueprint
+Object 
+v.s
+. class
+•
+An object is an 
+instance
+of a class, and you can create 
+many instances 
+of a 
+class
+•
+Creating an instance of a class is referred to as 
+instantiation
+•
+The terms object and instance are often used interchangeably
+
+Circle
+1
+Circle
+2
+Circle
+blueprint
+radius
+=
+3
+fillColor
+=
+’blue’
+getArea
+()
+radius
+=
+5
+fillColor
+=
+’oranges’
+getArea
+()
+object
+class
+method
+method
+Methods
+•
+You can perform 
+operations
+on 
+an object
+•
+The operations are defined 
+using 
+functions
+•
+The functions for the objects are 
+called 
+methods
+in Python
+•
+Methods can only be invoked 
+from 
+a specific object
+
+Circle
+1
+Circle
+2
+Circle
+blueprint
+radius
+=
+3
+fillColor
+=
+’blue’
+getArea
+()
+radius
+=
+5
+fillColor
+=
+’oranges’
+getArea
+()
+object
+class
+method
+method
+data
+field
+data
+field
+Data fields
+•
+Data fields
+are 
+variables
+that
+store information inside an object.
+•
+They 
+describe the
+state
+or
+properties
+of that object.
+•
+In 
+Python, we 
+also 
+call them
+states
+, 
+attributes
+or
+properties
+.
+Key elements of an object
+•
+Identity
+: 
+a
+unique way to distinguish the object from others in memory. 
+It’
+s 
+like a person’s ID. Python automatically assigns each object 
+a unique id 
+for 
+identifying the object at runtime.
+•
+State
+: 
+t
+he 
+data stored inside the object 
+—
+this describes the object. 
+An 
+object’s 
+state
+(also known as 
+its 
+properties
+or 
+attributes
+) is represented by 
+variables, called 
+data fields
+.
+•
+Methods
+: 
+The actions the object can perform 
+—
+defined in its class. 
+Python 
+uses 
+methods 
+to define an object’s 
+behavior
+. You 
+make an object perform 
+an action by invoking a method on that object.
+Class Example
+•
+Class name
+: 
+Student
+•
+Data fields
+: 
+Name, Age, Grade, …
+•
+Methods
+:
+updateGrade
+()
+isAdult
+()
+displayInfo
+()
+……
+Why we need object oriented programming?
+•
+To Organize Code Better (
+Modularity): 
+Big programs can get messy if written as one 
+long list of 
+instructions. OOP 
+helps us split the 
+program into
+classes
+and
+objects. Each 
+class handles one type of thing, keeping its
+data
+and
+actions
+together.
+•
+To Reuse Code (Reusability
+): 
+Once 
+we create a
+class, we can make as many objects 
+from it as we need 
+—
+no need to write the code again.
+•
+To Make Big Projects Easier to 
+Maintain
+: 
+In OOP , data and actions are stored together 
+inside objects 
+—
+changes happen inside the class without affecting unrelated parts.
+•
+To Model Real
+-
+World 
+Problems
+: 
+OOP 
+lets us create
+digital versions of real
+-
+world things 
+and 
+allows us to write program in a way that naturally match the problem that we are 
+trying to solve.
+Built
+-
+in Class
+•
+A built
+-
+in class is a class that comes predefined in Python.
+•
+You don’t have to write the blueprint 
+—
+Python already provides it.
+•
+Examples: 
+str
+, 
+int
+, list, 
+dict
+, tuple, etc
+.
+
+Custom 
+Class
+•
+A
+custom class
+is a class
+you create yourself
+to define new types of 
+objects specific to your needs.
+•
+You write the blueprint 
+(data fields/attributes 
++ methods).
+
+Comparisons between Built
+-
+in and custom class
+
+Define class
+•
+Python uses the following syntax to define a class
+
+Define class
+•
+Python uses the following syntax to define a class
+•
+A
+class provides a special method, 
+__
+init
+__()
+. This method, known as 
+an 
+initializer
+, is invoked to initialize a new object’s state when it is 
+created
+
+Example
+
+Self
+•
+All methods, including the 
+initializer, have the first 
+parameter 
+self
+•
+This parameter refers to the 
+object that invokes the 
+method
+. 
+•
+The 
+self
+parameter in the 
+__
+init
+__() 
+method is 
+automatically set to 
+reference the object that 
+was just created
+
+Scope of self
+•
+The scope of an instance 
+variable is the 
+entire 
+class
+once it is created
+•
+You can also create 
+local 
+variables
+in a method 
+•
+The scope of a local 
+variable is 
+within the 
+method
+Constructing objects
+•
+Once a 
+class
+is defined, you can 
+create objects 
+from the class with a 
+constructor
+. The constructor does two things:
+
+It creates an object in the memory for the class
+
+It invokes the class’s 
+__
+init
+__() 
+method to initialize the object
+
+Constructor arguments
+•
+The arguments of the constructor 
+match
+the parameters in the 
+__
+init
+__() 
+method 
+without 
+self
+•
+The initializer in the Circle class has a 
+default
+radius value, then the 
+constructor 
+without arguments 
+will assign the default values to data 
+fields
+
+Accessing member of objects
+•
+Data fields 
+are also called 
+instance variables
+, 
+because each object (instance) has a specific 
+value for a data field
+•
+Methods
+are also called 
+instance methods
+, 
+because a method which is invoked by an object 
+(instance) will perform actions based on the data 
+fields of that object
+•
+You can access the object’s data fields and 
+invoke its methods by using the 
+dot operator (.)
+, 
+also known as the 
+object member access 
+operator
+
+Example
+
+Result
+
+What is wrong with this program?
+
+What is wrong with these program?
+
+Example: TV class
+
+
+Example: the code to use TV class
+
+Mutable objects
+
+Practice
+•
+What would be the output of the above program?
+
+Practice
+•
+What would be the output of the above program?
+c
+n
+(Count)
+count
+=
+0
+(int)
+n
+=
+1
+main
+memory
+c
+n
+(Count)
+count
+=
+0
+(int)
+n
+=
+1
+main
+memory
+c
+n
+m
+c
+n
+(Count)
+count
+=
+0
+(int)
+n
+=
+1
+main
+memory
+c
+n
+m
+c
+n
+(Count)
+count
+=
+0
+(int)
+n
+=
+1
+(Count)
+count
+=
+5
+(int)
+n
+=
+3
+main
+memory
+c
+n
+m
+
+Hiding data fields
+•
+Direct access 
+of a data field in an object is 
+not good
+!! 
+•
+First, data may be 
+tampered with
+•
+Second, the class becomes 
+difficult to maintain 
+and 
+vulnerable to bugs
+Private data fields
+•
+Prevent other programmers from directly accessing the data 
+fields of your class is a common industrial practice
+•
+This is known as 
+data hiding
+•
+This can be done by defining 
+private data fields
+Private data fields
+•
+In Python, the 
+private data fields 
+are defined with two 
+leading 
+underscores
+. You can also define a 
+private method 
+named with two 
+leading underscores
+•
+Private data fields and methods 
+can be accessed within a class, but 
+they 
+cannot be accessed outside 
+the class
+•
+Define some 
+methods
+to allow 
+access to private data fields
+
+Practice
+•
+What is the problem with this program?
+
+Practice
+•
+Is the above code correct? If yes, what would be the output?
+
+Practice
+•
+Is the above code correct? If not, how do we fix it?
+Solution
+Option 1: Make the attribute public
+Option 2: Keep it private but use a getter method
+
+Abstraction
+•
+Abstraction means separate the 
+implementation
+of a part of code 
+from the 
+usage
+of that code
+•
+T
+here 
+are many levels of abstraction, a commonly used one is called 
+function abstraction
+•
+Function abstraction means separating the implementation of a 
+function from its usage
+•
+Abstraction makes your code easy to 
+maintain, debug 
+and 
+reuse
+Example
+
+Programmer 1 
+Write and maintain 
+isPrime
+() 
+Programmer 2 
+Write and maintain 
+printPrimeNumbers
+() 
+If we write everything 
+together…
+Class abstraction and encapsulation
+•
+Class abstraction 
+means separating class implementation 
+from the use of a class 
+•
+The class implementation details are 
+invisible
+from the user
+•
+The class’s collection of methods, together with the 
+description of how these methods are expected to behave, 
+serves as the class’s 
+contract
+with the client
+Class abstraction and encapsulation
+•
+The user of the class does not need to know how the class is 
+implemented. The details of implementation are 
+encapsulated 
+and 
+hidden
+from the user. 
+•
+This is known as 
+class encapsulation
+•
+In essence, encapsulation combines data and methods into a single 
+object and hides the data fields and method implementation from 
+the user
+Class abstraction and encapsulation
+•
+Encapsulation: 
+hidden 
+implementation
+for the internal parts of 
+the 
+computer 
+(CPU, ROM, hard drive).
+•
+Abstraction: 
+public interface for user
+for 
+the visible parts (monitor, keyboard, 
+mouse, power button).
+
+Example 
+–
+BMI calculation
+
+The code to use BMI class
+•
+We can use the BMI class if 
+you have its 
+contract 
+•
+You 
+don’t need to know 
+the 
+details about how it is 
+implemented!!
+The BMI class
+Example
+-
+Loan
+
+Example of loan class
+Practice
+(The Rectangle class) Following the example of the Circle class, design a 
+class named Rectangle to represent a rectangle. The class contains:
+■
+Two data fields named width and height.
+■
+A constructor that creates a rectangle with the specified width and 
+height.
+The default values are 1 and 2 for the width and height, respectively.
+■
+A method named 
+getArea
+() that returns the area of this rectangle.
+■
+A method named 
+getPerimeter
+() that returns the perimeter.
+Practice
+(The Stock class) Design a class named Stock to represent a company’s stock that contains:
+■
+A private string data field named symbol for the stock’s symbol.
+■
+A private string data field named name for the stock’s name.
+■
+A private float data field named 
+previousClosingPrice
+that stores the stock price for the previous 
+day.
+■
+A private float data field named 
+currentPrice
+that stores the stock price for the current time.
+■
+A constructor that creates a stock with the specified symbol, name, previous price, and current 
+price.
+■
+A get method for returning the stock name.
+■
+A get method for returning the stock symbol.
+■
+Get and set methods for getting/setting the stock’s previous price. 
+■
+Get and set methods for getting/setting the stock’s current price.
+■
+A method named 
+getChangePercent
+() that returns the percentage changed from 
+previousClosingPrice
+to 
+currentPrice
+.

@@ -1,0 +1,216 @@
+AIE1001 Introduction toAIProgramming
+Lecture 8Object Oriented Programming II
+Prof. Junjie Hu
+School of Artificial Intelligence
+
+Outline
+•Inheritance
+•Superclass and subclass
+•Inheritance syntax
+•more information about super and sub-class
+•Overriding methods
+•The object class
+•Methods of the object class
+•Polymorphism
+•Dynamic binding
+•Multiple Inheritance
+OOP
+•The object -oriented programming couples data and methods
+together into objects
+
+OOP
+•The object oriented approach combines the power of the structural 
+programming with an added dimension that integrates data with 
+operations into objects
+If-else, loop, structures!! Only objects!!
+OOP
+Geometric object
+
+The code for GeometricObject
+
+Circle andRectangle
+•Wewant tohave similar data fields and methods as 
+GeometricObject
+•Wealso want some specialized data fields and methods
+
+Inheritance
+•OOP allows you to define new classes from existing classes. This is 
+called inheritance
+•Inheritance extends the power of the object -oriented paradigm by 
+adding an important and powerful feature for reusing code
+Superclass and subclass
+•Inheritance enables you to define a general class (a superclass ) and 
+later extend it to more specialized classes ( subclasses )
+•You use a class to model objects of the same type. Different classes 
+may have some common properties and behaviours that you can 
+generalize in a class
+•The specialized classes inherit the properties and methods from the 
+general class.
+Inheritance syntax
+•The Circle class is derived from the GeometricObject class, based on 
+the following syntax
+•Circle class inherits the GeometricObject class, thus inheriting the 
+methods getColor , setColor , isFilled , setFilled , and __str__
+•The printCircle method invokes the __str__() method defined to 
+obtain properties defined in the superclass
+
+The code for Circle class
+•A subclass inherits 
+accessible data fields and 
+methods from its 
+superclass, but it can also 
+have other data fields and 
+methods
+Circle andRectangle
+The code for rectangle class
+
+The code for testing Circle and 
+Rectangle 
+
+Some more information about super 
+and sub -class
+•A subclass is not a subset of its superclass; In fact, a subclass usually 
+contains more information and methods than its superclass
+•Inheritance models the is -a relationships, but not all is-a relationships 
+should be modelled using inheritance
+•Do not blindly extend a class just for the sake of reusing methods. For 
+example, it makes no sense for a Tree class to extend a Person class, 
+even though they share common properties such as height and 
+weight. A subclass and its superclass must have the is -a relationship
+Practice
+What is the problem with the above code?
+Overriding methods
+•A subclass inherits methods from a superclass
+•Sometimes it is necessary for the subclass to modify the 
+implementation of a method defined in the superclass. This 
+is referred to as method overriding
+Example
+•The __str__ method in the GeometricObject class returns the 
+string describing a geometric object. This method can be 
+overridden to return the string describing a circle
+•The __str__() method is defined in the GeometricObject class and 
+modified in the Circle class. Both methods can be used in the 
+Circle class. To invoke the __str__ method defined in the 
+GeometricObject class from the Circle class, use super().__ str__()
+Practice
+What would be the 
+output of the following 
+program?
+The object class
+•Every class in Python is descended from the object class
+•The object class is defined in the Python library. If no inheritance is 
+specified when a class is defined, its superclass is object by default
+
+Methods of the object class
+•The __str__() method returns a string description for the object
+•Usually you should override the __str__() method so that it returns 
+an informative description for the object
+What is the output of this program?
+
+Methods of the object class
+•The __new__() method is automatically invoked when an object is 
+constructed. This method then invokes the __init__() method to 
+initialize the object. Normally you should only override the __init__() 
+method to initialize the data fields defined in the new class
+•The __eq__() method returns True if two objects are the same
+What is the output of this program?
+
+What is the 
+output of this 
+program?
+
+Correct Python Style
+•__new__() is 
+responsible 
+for creating a 
+new object.
+•__init__() is 
+responsible 
+for initializing 
+it after 
+creation.
+
+Polymorphism
+•The inheritance relationship enables a subclass to inherit 
+features from its superclass with additional new features 
+•A subclass is a specialization of its superclass; every instance 
+of a subclass is also an instance of its superclass, but not vice 
+versa
+•Therefore, you can always pass an instance of a subclass to a 
+parameter of its superclass type
+Polymorphism and dynamic binding
+•Polymorphism means that an object of a subclass can 
+be passed to a parameter of a superclass type
+•A method may be implemented in several classes 
+along the inheritance chain
+•Python decides which method is invoked at runtime. 
+This is known as dynamic binding
+Example
+
+Output
+
+Dynamic binding
+•Dynamic binding works as follows: Suppose an object o is an instance 
+of classes C1, C2, ..., Cn -1, and Cn, where C1 is a subclass of C2, C2 is a 
+subclass of C3, ..., and Cn -1 is a subclass of Cn
+•That is, Cn is the most general class, and C1 is the most specific class 
+•In Python, Cn is the object class 
+•If o invokes a method p, Python searches the implementation for the 
+method p in C1, C2, ..., Cn -1, and Cn, in this order, until it is found
+
+Example
+•What would be the output of 
+this program?
+
+Example
+
+Question
+•Suppose you want to modify the displayObject function in previous 
+example to perform the following tasks:
+■Display the area and perimeter of a GeometricObject instance
+■Display the diameter if the instance is a Circle, and the width and 
+height if the instance is a Rectangle
+Does this program work?
+
+Isinstance () function
+•The isinstance ()function can be used to determine whether an object 
+is an instance of a class
+•This function determines whether an object is an instance of a class 
+by using the following syntax
+
+
+Practice
+What would be the outputs?
+Practice
+
+Questions
+(a) Is goldenDelicious an instance of Fruit ?
+(b) Is goldenDelicious an instance of Orange ?
+(c) Is goldenDelicious an instance of Apple ?
+(d) Is goldenDelicious an instance of GoldenDelicious ?
+(e) Is goldenDelicious an instance of McIntosh ?
+(f) Is orange an instance of Orange ?
+(g) Is orange an instance of Fruit ?
+(h) Is orange an instance of Apple ?
+(i) Suppose the method makeAppleCider is defined in the Apple class. Can 
+goldenDelicious invoke this method? Can orange invoke this method?
+( j) Suppose the method makeOrangeJuice is defined in the Orange class. Can 
+orange invoke this method? Can goldenDelicious invoke this method?
+Practice: course class
+
+Answer
+
+Answer
+
+Multiple Inheritance
+•In Python, we can define new class from multiple classes
+•This is called multiple inheritance
+•Multiple inheritance is a feature in which a class can inherit 
+attributes and methods from more than one parent class
+Inheritance Tree
+•The inheritance relationship in Python can be represented by 
+a tree structure
+Example
+
+Example
+
